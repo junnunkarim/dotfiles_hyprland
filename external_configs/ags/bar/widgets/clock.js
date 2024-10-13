@@ -9,7 +9,7 @@ const create_time_format = (time_format) =>
   });
 
 const lib_time = Variable(GLib.DateTime.new_now_local(), {
-  poll: [1000, () => GLib.DateTime.new_now_local()],
+  poll: [20000, () => GLib.DateTime.new_now_local()], // 20 seconds
 });
 const calendar = capture_cmd_output("cal -3");
 const info_time_date = lib_time
@@ -33,5 +33,6 @@ export default () =>
       clock_icon,
       // 24-Hour : Minute
       create_time_format("%H\n%M"),
+      // create_time_format("%H\n%M\n%S"),
     ],
   });

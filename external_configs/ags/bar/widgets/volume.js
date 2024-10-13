@@ -15,7 +15,8 @@ const volume_icon = Widget.Icon({
 const volume_button = Widget.Button({
   class_name: "volume_button all_buttons",
 
-  on_clicked: () => (lib_audio.speaker.is_muted = !lib_audio.speaker.is_muted),
+  // on_clicked: () => (lib_audio.speaker.is_muted = !lib_audio.speaker.is_muted),
+  on_clicked: () => (volume_label.visible = !volume_label.visible),
 
   child: volume_icon,
 });

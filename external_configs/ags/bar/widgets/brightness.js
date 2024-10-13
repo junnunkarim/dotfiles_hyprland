@@ -13,6 +13,9 @@ const brightness_icon = Widget.Icon({
 
 const brightness_button = Widget.Button({
   class_name: "brightness_button all_buttons",
+
+  on_clicked: () => (brightness_label.visible = !brightness_label.visible),
+
   child: brightness_icon,
 });
 
