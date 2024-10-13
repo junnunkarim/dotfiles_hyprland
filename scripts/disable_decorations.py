@@ -9,6 +9,7 @@ import argparse
 def get_hypr_decoration_status():
     cmd = "hyprctl getoption animations:enabled"
     result = subprocess.run(shlex.split(cmd), capture_output=True, text=True)
+
     return result.stdout.split()[1]  # extract the second column (value)
 
 
@@ -20,6 +21,14 @@ def disable_anim_blur():
     subprocess.run(shlex.split(batch_cmd))
 
 
+def disable_gaps():
+    batch_cmd = """hyprctl --batch "keyword general:gaps_in 0;
+                    keyword general:gaps_out 0;
+                    keyword decoration:rounding 0"
+                 """
+    subprocess.run(shlex.split(batch_cmd))
+
+
 # disable all hyprland decorations
 def disable_all_decorations():
     batch_cmd = """hyprctl --batch "keyword animations:enabled 0;
@@ -27,7 +36,6 @@ def disable_all_decorations():
                     keyword decoration:blur:enabled 0;
                     keyword general:gaps_in 0;
                     keyword general:gaps_out 0;
-                    keyword general:border_size 1;
                     keyword decoration:rounding 0"
                  """
     subprocess.run(shlex.split(batch_cmd))
@@ -39,6 +47,7 @@ def main():
     parser.add_argument(
         "--anim_blur", action="store_true", help="Disable only animations and blur"
     )
+    parser.add_argument("--gaps", action="store_true", help="Disable only gaps")
     parser.add_argument("--all", action="store_true", help="Disable all decorations")
 
     args = parser.parse_args()
@@ -47,6 +56,8 @@ def main():
     if get_hypr_decoration_status() == "1":
         if args.anim_blur:
             disable_anim_blur()
+        if args.gaps:
+            disable_gaps()
         elif args.all:
             disable_all_decorations()
         else:

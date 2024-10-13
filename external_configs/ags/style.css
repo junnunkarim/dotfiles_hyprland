@@ -1,0 +1,213 @@
+window.bar {
+  background-color: rgba(25, 23, 36, 0.5);
+  color: #e0def4;
+  /* opacity: 0.5; */
+  /* top-left top-right bottom-right bottem-left */
+  border-radius: 0px 30px 30px 0px;
+}
+
+levelbar block,
+highlight {
+  min-height: 10px;
+}
+
+label {
+  font-family: Iosevka;
+}
+
+button {
+  min-width: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: transparent;
+  border-radius: 20px;
+}
+button:active {
+  background-color: @theme_selected_bg_color;
+}
+button:hover {
+  border-bottom: 3px solid @theme_fg_color;
+}
+
+
+/* clock widget */
+.clock_box {
+  background: #c4a7e7;
+  color: #191724;
+  /* top-left top-right bottom-right bottem-left */
+  border-radius: 0px 20px 20px 0px;
+}
+.clock_icon {
+  background: #907aa9;
+  color: #e0def4;
+  /* top-left top-right bottom-right bottem-left */
+  border-radius: inherit;
+  font-size: 35px;
+}
+/* .clock_icon:hover { */
+/*     border-bottom: 0px solid #d7827e; */
+/* } */
+.clock_label {
+  font-size: 20px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  border-left: 5px solid #907aa9;
+}
+
+/* client title widget */
+.client_title_box {
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 600;
+  /* border-left: 5px solid #e0def4; */
+}
+
+/* workspace widget */
+/* apply to each individual workspace */
+.workspace {
+  border-left: 5px solid #d7827e;
+  border-radius: 0px 20px 20px 0px;
+}
+.workspace_icon {
+  font-size: 35px;
+}
+.workspace_icon:hover {
+  border-radius: 0px 20px 20px 0px;
+}
+.workspace_active {
+  background: #ebbcba;
+}
+/* if workspace is active change icon style */
+.workspace_active .workspace_icon {
+  background: #d7827e;
+  color: #e0def4;
+  border-left: unset;
+  border-radius: inherit;
+}
+.workspace_client_count {
+  color: #191724;
+  margin-top: 1px;
+  font-size: 20px;
+  /* font-weight: bold; */
+}
+
+/* system-tray widget */
+.sys_tray_box {
+  background: rgba(215, 130, 126, 0.7);
+  border-radius: 20px;
+}
+.sys_tray_icon {
+  /* background: #c4a7e7; */
+  font-size: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: inherit;
+}
+.sys_tray_reveal_button {
+  background: rgba(215, 130, 126, 0.7);
+  /* opacity: 0.8; */
+  font-size: 30px;
+  border-radius: 20px;
+  margin-top: 5px;
+}
+.sys_tray_reveal_box .sys_tray_reveal, .sys_tray_reveal_space {
+  padding: 0px;
+  margin: 0px;
+}
+
+/* wifi widget */
+.wifi_box {
+  /* background: #c4a7e7; */
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.wifi_icon {
+  font-size: 22px;
+}
+.wifi_label {
+  font-size: 20px;
+}
+
+/* volume widget */
+/* .volume_box { */
+/*   font-size: 25px; */
+/*   padding-bottom: 5px; */
+/*   padding-top: 5px; */
+/* } */
+
+/* volume widget */
+.volume_box {
+  border-bottom: 2px solid #e0def4;
+  padding-bottom: 10px;
+  border-radius: 20px;
+}
+.volume_button {
+  font-size: 22px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  border-radius: inherit;
+}
+.volume_label {
+  color: #e0def4;
+  font-size: 20px;
+  border-radius: inherit;
+}
+
+/* brightness widget */
+.brightness_box {
+  border-bottom: 2px solid #e0def4;
+  padding-bottom: 10px;
+  border-radius: 20px;
+}
+.brightness_button {
+  /* background: #f6c177; */
+  font-size: 23px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  border-radius: inherit;
+}
+.brightness_label {
+  color: #e0def4;
+  font-size: 20px;
+  border-radius: inherit;
+}
+
+/* battery widget */
+.battery_box:not(.battery_charging_box) {
+  background: #9ccfd8;
+}
+.battery_charging_box {
+  background: #f6c177;
+}
+.battery_box {
+  color: #191724;
+  margin-bottom: 10px;
+  /* top-left top-right bottom-right bottem-left */
+  border-radius: 0px 20px 20px 0px;
+}
+.battery_icon:not(.battery_charging_icon) {
+  background: #31748f;
+}
+.battery_charging_icon {
+  background: #ea9d34;
+}
+.battery_icon {
+  font-size: 25px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  /* top-left top-right bottom-right bottem-left */
+  border-radius: inherit;
+}
+.battery_label:not(.battery_charging_label) {
+  border-left: 5px solid #31748f;
+}
+.battery_charging_label {
+  border-left: 5px solid #ea9d34;
+}
+.battery_label {
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  /* padding-left: 2px; */
+  /* padding-right: 2px; */
+}
