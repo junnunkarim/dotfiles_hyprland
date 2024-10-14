@@ -10,7 +10,7 @@ const battery_icon = Widget.Icon({
 });
 const battery_label = Widget.Label({
   class_name: "battery_label all_labels",
-  label: battery_percent.as((p) => `${p}`),
+  label: battery_percent.as((p) => `${Math.round(p)}`),
 });
 
 export default () =>
@@ -18,7 +18,7 @@ export default () =>
     class_name: "battery_box all_widget_boxs",
     visible: lib_battery.bind("available"),
     vertical: true,
-    tooltipText: battery_percent.as((p) => `${p}%`),
+    tooltipText: battery_percent.as((p) => `${Math.round(p)}%`),
 
     children: [battery_label, battery_icon],
 
@@ -48,7 +48,9 @@ export default () =>
           battery_is_charging ? true : false,
         );
 
-        const battery_percent = lib_battery.bind("percent").emitter._percent;
+        const battery_percent = Math.round(
+          lib_battery.bind("percent").emitter._percent,
+        );
 
         if (notify_low_battery && battery_percent <= notify_threshold) {
           // hyprctl notify [ICON] [TIME_MS] [COLOR] [MESSAGE]
