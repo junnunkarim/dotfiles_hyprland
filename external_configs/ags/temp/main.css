@@ -1,0 +1,180 @@
+window.bar {
+  background-color: rgba(39, 46, 51, 0.5);
+  color: #d3c6aa;
+  border-radius: 0px 30px 30px 0px; }
+
+levelbar block,
+levelbar highlight {
+  min-height: 10px; }
+
+label {
+  font-family: Iosevka; }
+
+button {
+  min-width: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: transparent;
+  /* border-radius: 20px; */
+  border-radius: 0px 20px 20px 0px;
+  transition: all 0.5s ease-in-out;
+  /* transition: all 0.5s cubic-bezier(0.68,-0.55,0.27,1.55); */ }
+  button:active {
+    background-color: #d3c6aa; }
+  button:hover {
+    /* background-color: #d3c6aa; */
+    /* color: #272e33; */
+    border-bottom: 3px solid #d3c6aa; }
+
+/* clock widget */
+.clock_box {
+  background: #374145;
+  color: #e69875;
+  border-radius: 0px 20px 20px 0px;
+  margin-bottom: 20px; }
+
+.clock_icon {
+  background: #e69875;
+  color: #374145;
+  border-radius: inherit;
+  font-size: 35px; }
+
+.clock_label {
+  font-size: 20px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  border-left: 5px solid #e69875; }
+
+/* client title widget */
+.client_title_box {
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 600;
+  margin-bottom: 10px; }
+
+/* workspace widget */
+.workspace_box {
+  margin-bottom: 10px; }
+
+.workspace {
+  border-left: 5px solid #a7c080;
+  border-radius: 0px 20px 20px 0px; }
+  .workspace.workspace_active {
+    background: #3c4848; }
+    .workspace.workspace_active .workspace_icon {
+      background: #a7c080;
+      color: #3c4848;
+      border-left: unset;
+      border-radius: inherit; }
+
+.workspace_icon {
+  font-size: 35px; }
+  .workspace_icon:hover {
+    color: #a7c080;
+    border-radius: 0px 20px 20px 0px; }
+
+.workspace_client_count {
+  color: #a7c080;
+  margin-top: 1px;
+  font-size: 20px; }
+
+/* system-tray widget */
+.sys_tray_box {
+  background: #414b50;
+  border-radius: 20px; }
+
+.sys_tray_icon {
+  font-size: 23px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: inherit; }
+
+.sys_tray_reveal_button {
+  background: #495156;
+  font-size: 30px;
+  /* border-radius: 20px; */
+  margin-top: 5px;
+  margin-bottom: 10px; }
+
+.sys_tray_reveal_box .sys_tray_reveal,
+.sys_tray_reveal_box .sys_tray_reveal_space {
+  padding: 0px;
+  margin: 0px; }
+
+/* wifi widget */
+.wifi_box {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 10px; }
+
+.wifi_icon {
+  font-size: 23px; }
+
+.wifi_label {
+  font-size: 20px; }
+
+/* volume widget */
+.volume_box {
+  border-radius: 20px; }
+
+.volume_button {
+  font-size: 22px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  border-radius: inherit; }
+
+.volume_label {
+  color: #d3c6aa;
+  font-size: 20px;
+  padding-bottom: 10px;
+  border-radius: inherit; }
+
+/* brightness widget */
+.brightness_box {
+  border-radius: 20px; }
+
+.brightness_button {
+  font-size: 23px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  border-radius: inherit; }
+
+.brightness_label {
+  color: #d3c6aa;
+  font-size: 20px;
+  padding-bottom: 10px;
+  border-radius: inherit; }
+
+/* battery widget */
+.battery_box {
+  margin-bottom: 10px;
+  border-radius: 0px 20px 20px 0px; }
+  .battery_box:not(.battery_charging_box) {
+    background: #384b55; }
+
+.battery_icon {
+  color: #384b55;
+  font-size: 25px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-radius: inherit; }
+  .battery_icon:not(.battery_charging_icon) {
+    background: #7fbbb3; }
+
+.battery_label {
+  color: #7fbbb3;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 5px; }
+  .battery_label:not(.battery_charging_label) {
+    border-left: 5px solid #7fbbb3; }
+
+.battery_charging_box {
+  background: #4c3743; }
+
+.battery_charging_label {
+  color: #e67e80;
+  border-left: 5px solid #e67e80; }
+
+.battery_charging_icon {
+  background: #e67e80; }

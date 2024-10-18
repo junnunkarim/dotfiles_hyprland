@@ -25,7 +25,7 @@ const sys_tray_reveal_box = create_revealer_box({
   revealer_class: "sys_tray_reveal",
   revealer_space_class: "sys_tray_reveal_space",
   animation: "slide_down",
-  animation_duration_ms: 500,
+  animation_duration_ms: 1000,
 });
 // const utility_reveal_box = create_revealer_box({
 //   widgets: [volume_box, wifi_box],
@@ -37,7 +37,7 @@ const sys_tray_reveal_box = create_revealer_box({
 
 const start_widget = Widget.Box({
   vertical: true,
-  spacing: 10,
+  // spacing: 10,
   children: [clock_box, client_title_box],
 });
 const center_widget = Widget.Box({
@@ -48,7 +48,7 @@ const end_widget = Widget.Box({
   vertical: true,
   vpack: "end",
   // hpack: "end",
-  spacing: 10,
+  // spacing: 10,
   children: [
     sys_tray_reveal_box,
     wifi_box,

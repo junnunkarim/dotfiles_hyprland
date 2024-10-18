@@ -9,10 +9,19 @@ const create_ws_icon = (workspace_id) =>
       lib_hyprland.messageAsync(`dispatch workspace ${workspace_id}`),
   });
 
-const create_ws_client_count = () =>
-  Widget.Label({
+const create_ws_client_count = () => {
+  const label = Widget.Label({
     class_name: "workspace_client_count all_labels",
   });
+
+  return Widget.Revealer({
+    revealChild: true,
+    transitionDuration: 500,
+    transition: "slide_down",
+
+    child: label,
+  });
+};
 
 const workspace_count = 9;
 const workspace_labels = {
@@ -64,10 +73,10 @@ const ws_item = (workspace_id) =>
 
         // show client count only if the current workspace is active
         if (is_active) {
-          ws_client_count.visible = true;
-          ws_client_count.set_label(`${client_count}`);
+          ws_client_count.reveal_child = true;
+          ws_client_count.child.set_label(`${client_count}`);
         } else {
-          ws_client_count.visible = false;
+          ws_client_count.reveal_child = false;
         }
       });
     },

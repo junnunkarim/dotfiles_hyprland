@@ -21,6 +21,7 @@ const clock_icon = Widget.Button({
   label: "󰥔",
 
   on_clicked: () => execute_cmd("kitty -e calcure"),
+  // on_clicked: () => execute_cmd("gnome-calendar"),
 });
 
 export default () =>

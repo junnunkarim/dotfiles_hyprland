@@ -1,9 +1,10 @@
+import { execute_cmd } from "../../helpers/utils.js";
+
 const lib_network = await Service.import("network");
 
 const wifi_icon = Widget.Icon({
   class_name: "wifi_icon all_icons",
   icon: lib_network.wifi.bind("icon_name"),
-  tooltipText: lib_network.wifi.bind("ssid").as((ssid) => ssid || "unknown"),
   // setup: (self) => {
   // const wifi_name = lib_network.wifi
   //   .bind("ssid")
@@ -20,6 +21,11 @@ const wifi_icon = Widget.Icon({
 export default () =>
   Widget.Button({
     class_name: "wifi_box all_widget_boxs",
+    tooltipText: lib_network.wifi
+      .bind("ssid")
+      .as((ssid) => `Wifi SSID: ${ssid}` || "unknown"),
+
+    on_clicked: () => execute_cmd("nm-connection-editor"),
 
     child: wifi_icon,
   });

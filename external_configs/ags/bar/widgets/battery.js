@@ -18,7 +18,9 @@ export default () =>
     class_name: "battery_box all_widget_boxs",
     visible: lib_battery.bind("available"),
     vertical: true,
-    tooltipText: battery_percent.as((p) => `${Math.round(p)}%`),
+    tooltipText: battery_percent.as(
+      (level) => ` Battery Level: ${Math.round(level)}%`,
+    ),
 
     children: [battery_label, battery_icon],
 

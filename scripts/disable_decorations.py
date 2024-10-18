@@ -16,7 +16,9 @@ def get_hypr_decoration_status():
 # disable only animation and blur
 def disable_anim_blur():
     batch_cmd = """hyprctl --batch "keyword animations:enabled 0;
-                    keyword decoration:blur:enabled 0"
+                    keyword decoration:blur:enabled 0;
+                    keyword decoration:active_opacity 0.95;
+                    keyword decoration:inactive_opacity 0.85"
                  """
     subprocess.run(shlex.split(batch_cmd))
 
@@ -36,7 +38,9 @@ def disable_all_decorations():
                     keyword decoration:blur:enabled 0;
                     keyword general:gaps_in 0;
                     keyword general:gaps_out 0;
-                    keyword decoration:rounding 0"
+                    keyword decoration:rounding 0;
+                    keyword decoration:active_opacity 0.95;
+                    keyword decoration:inactive_opacity 0.85"
                  """
     subprocess.run(shlex.split(batch_cmd))
 

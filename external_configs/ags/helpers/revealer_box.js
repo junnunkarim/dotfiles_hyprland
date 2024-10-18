@@ -5,7 +5,7 @@ export function create_revealer_box({
   revealer_class = "",
   revealer_space_class = "",
   vertical = true,
-  icon = "",
+  icon = "",
   animation = "slide_down",
   animation_duration_ms = 1000,
 } = {}) {
@@ -23,7 +23,7 @@ export function create_revealer_box({
     }),
   });
 
-  return Widget.Box({
+  const box = Widget.Box({
     class_name: revealer_box_class,
     vertical: true,
 
@@ -32,8 +32,11 @@ export function create_revealer_box({
       Widget.Button({
         class_name: revealer_button_class,
         label: icon,
+
         on_clicked: () => (revealer.reveal_child = !revealer.reveal_child),
       }),
     ],
   });
+
+  return box;
 }
