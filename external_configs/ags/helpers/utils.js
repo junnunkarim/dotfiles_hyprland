@@ -20,3 +20,16 @@ export async function bash(strings, ...values) {
 export function capture_cmd_output(cmd) {
   return Utils.exec(cmd);
 }
+
+export function toggle_popup_applications(launch_cmd, class_name) {
+  const clients_json = capture_cmd_output("hyprctl clients -j");
+  const clients = JSON.parse(clients_json);
+
+  const client = clients.find((c) => c.class === class_name);
+
+  if (client) {
+    execute_cmd(`kill ${client.pid}`);
+  } else {
+    execute_cmd(launch_cmd);
+  }
+}

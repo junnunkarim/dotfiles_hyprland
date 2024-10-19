@@ -63,7 +63,7 @@ const ws_item = (workspace_id) =>
         const is_occupied = client_count > 0;
 
         // toggle widget visibility if workspace is active or occupied
-        self.visible = is_active || is_occupied;
+        // self.visible = is_active || is_occupied;
 
         // first add the class name, afterwards toggle the class names depending on active/occupied state
         self.toggleClassName("workspace_active", is_active);
@@ -82,11 +82,38 @@ const ws_item = (workspace_id) =>
     },
   });
 
+const ws_item_revealer = (workspace_id) =>
+  Widget.Revealer({
+    revealChild: false,
+    transitionDuration: 1000,
+    transition: "slide_up",
+
+    child: ws_item(workspace_id),
+
+    setup: (self) => {
+      // hook into hyprland's state and update the button's state based on the workspace status
+      self.hook(lib_hyprland, () => {
+        // get the client count in current workspace
+        const client_count =
+          lib_hyprland.getWorkspace(workspace_id)?.windows || 0;
+        // check if the current workspace is active or not
+        const is_active = lib_hyprland.active.workspace.id === workspace_id;
+        // check if the current workspace has clients/windows or not
+        const is_occupied = client_count > 0;
+
+        // toggle widget visibility if workspace is active or occupied
+        self.revealChild = is_active || is_occupied;
+      });
+    },
+  });
+
 export default () =>
   Widget.Box({
     class_name: "workspace_box all_widget_boxs",
     vertical: true,
 
     // create buttons for workspaces 1 to 9
-    children: [...Array(workspace_count).keys()].map((i) => ws_item(i + 1)),
+    children: [...Array(workspace_count).keys()].map((i) =>
+      ws_item_revealer(i + 1),
+    ),
   });

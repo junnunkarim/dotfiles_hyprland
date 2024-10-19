@@ -43,7 +43,7 @@ const volume_box = Widget.Box({
 // contains the box widget
 const volume_revealer = Widget.Revealer({
   revealChild: true,
-  transitionDuration: 2000,
+  transitionDuration: 1000,
   transition: "slide_down",
 
   child: volume_box,
@@ -75,6 +75,9 @@ const reset_timer = (revealer_widget) => {
     return GLib.SOURCE_REMOVE;
   });
 };
+
+// console.log(lib_audio);
+// console.log(lib_audio.speaker);
 
 // hook on revealer widget when volume changes
 volume_revealer.hook(lib_audio.speaker, (self) => {

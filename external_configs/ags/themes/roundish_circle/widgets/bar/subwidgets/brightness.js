@@ -1,5 +1,8 @@
 import GLib from "gi://GLib";
-import lib_brightness from "../../services/brightness.js";
+// import lib_brightness from "../../services/brightness.js";
+const lib_brightness = (
+  await import(`file://${App.configDir}/services/brightness.js`)
+).default;
 
 // for tracking timer used
 let timer_id = null;
@@ -42,7 +45,7 @@ const brightness_box = Widget.Box({
 // contains the box widget
 const brightness_revealer = Widget.Revealer({
   revealChild: true,
-  transitionDuration: 2000,
+  transitionDuration: 1000,
   transition: "slide_up",
 
   child: brightness_box,

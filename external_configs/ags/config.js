@@ -1,31 +1,35 @@
-import setup_bar from "./bar/init.js";
+const { theme } = await import(`file://${App.configDir}/user_options.js`);
+const get_all_widgets = await import(
+  `file://${App.configDir}/themes/${theme}/init.js`
+);
 
-const bar = setup_bar();
+const all_widgets = get_all_widgets.default();
 
-const target_scss = `${App.configDir}/style/main.scss`;
-const process_css = `${App.configDir}/temp/main.css`;
+const stylesheet_directory = `${App.configDir}/themes/${theme}/styles`;
+const target_scss = `${stylesheet_directory}/styles/main.scss`;
+const processed_css = `${App.configDir}/temp/main.css`;
 
 // preprocess scss files
-Utils.exec(`sassc ${target_scss} ${process_css}`);
+Utils.exec(`sassc ${target_scss} ${processed_css}`);
 
 // autoreload css when scss files are modified
 Utils.monitorFile(
   // directory that contains the scss files
-  `${App.configDir}/style`,
+  stylesheet_directory,
 
   // reload function
   function () {
     // compile, reset, apply
-    Utils.exec(`sassc ${target_scss} ${process_css}`);
+    Utils.exec(`sassc ${target_scss} ${processed_css}`);
 
     App.resetCss();
-    App.applyCss(process_css);
+    App.applyCss(processed_css);
   },
 );
 
 App.config({
-  style: process_css,
-  windows: [bar],
+  style: processed_css,
+  windows: all_widgets,
 });
 
 export {};

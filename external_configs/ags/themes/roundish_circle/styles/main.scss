@@ -1,6 +1,6 @@
 window {
   &.bar {
-    background-color: rgba(39, 46, 51, 0.5);
+    background-color: rgba(39, 46, 51, 0.3);
     color: #d3c6aa;
     // opacity: 0.5;
     // top-left top-right bottom-right bottem-left
@@ -109,7 +109,8 @@ button {
 /* system-tray widget */
 .sys_tray_box {
   background: #414b50;
-  border-radius: 20px;
+  /* border-radius: 20px; */
+  border-radius: 0px 20px 20px 0px;
 }
 
 .sys_tray_icon {

@@ -1,13 +1,16 @@
-import widget_clock from "./widgets/clock.js";
-import widget_client_title from "./widgets/client_title.js";
-import widget_workspaces from "./widgets/workspaces.js";
-import widget_sys_tray from "./widgets/sys_tray.js";
-import widget_wifi from "./widgets/wifi.js";
-import widget_volume from "./widgets/volume.js";
-import widget_brightness from "./widgets/brightness.js";
-import widget_battery from "./widgets/battery.js";
+import widget_clock from "./subwidgets/clock.js";
+import widget_client_title from "./subwidgets/client_title.js";
+import widget_workspaces from "./subwidgets/workspaces.js";
+import widget_sys_tray from "./subwidgets/sys_tray.js";
+import widget_wifi from "./subwidgets/wifi.js";
+import widget_volume from "./subwidgets/volume.js";
+import widget_brightness from "./subwidgets/brightness.js";
+import widget_battery from "./subwidgets/battery.js";
 
-import { create_revealer_box } from "../helpers/revealer_box.js";
+// import { create_revealer_box } from "../helpers/revealer_box.js";
+const { create_revealer_box } = await import(
+  `file://${App.configDir}/helpers/revealer_box.js`
+);
 
 const clock_box = widget_clock();
 const client_title_box = widget_client_title();

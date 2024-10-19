@@ -1,6 +1,11 @@
 import GLib from "gi://GLib";
-
-import { execute_cmd, capture_cmd_output } from "../../helpers/utils.js";
+// import {
+//   capture_cmd_output,
+//   toggle_popup_applications,
+// } from "../../helpers/utils.js";
+const { capture_cmd_output, toggle_popup_applications } = await import(
+  `file://${App.configDir}/helpers/utils.js`
+);
 
 const create_time_format = (time_format) =>
   Widget.Label({
@@ -20,8 +25,8 @@ const clock_icon = Widget.Button({
   class_name: "clock_icon all_icons clock_button",
   label: "󰥔",
 
-  on_clicked: () => execute_cmd("kitty -e calcure"),
-  // on_clicked: () => execute_cmd("gnome-calendar"),
+  on_clicked: () =>
+    toggle_popup_applications("kitty --class pop_cal -e calcure", "pop_cal"),
 });
 
 export default () =>

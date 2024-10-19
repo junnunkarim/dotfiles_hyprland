@@ -1,4 +1,7 @@
-import { execute_cmd } from "../../helpers/utils.js";
+// import { toggle_popup_applications } from "../../helpers/utils.js";
+const { toggle_popup_applications } = await import(
+  `file://${App.configDir}/helpers/utils.js`
+);
 
 const lib_network = await Service.import("network");
 
@@ -25,7 +28,8 @@ export default () =>
       .bind("ssid")
       .as((ssid) => `Wifi SSID: ${ssid}` || "unknown"),
 
-    on_clicked: () => execute_cmd("nm-connection-editor"),
+    on_clicked: () =>
+      toggle_popup_applications("nm-connection-editor", "nm-connection-editor"),
 
     child: wifi_icon,
   });
