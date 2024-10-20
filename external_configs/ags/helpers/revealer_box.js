@@ -1,42 +1,44 @@
 export function create_revealer_box({
-  widgets = [],
-  revealer_box_class = "",
-  revealer_button_class = "",
-  revealer_class = "",
-  revealer_space_class = "",
-  vertical = true,
-  icon = "",
+  single_widget,
+  revealer_container_class__box = "",
+  revealer_button_class__btn = "",
+  open_icon = "",
+  close_icon = "",
   animation = "slide_down",
   animation_duration_ms = 1000,
 } = {}) {
+  // contains the the single widget
   const revealer = Widget.Revealer({
-    class_name: revealer_class,
     revealChild: false,
     transitionDuration: animation_duration_ms,
     transition: animation,
 
-    child: Widget.Box({
-      class_name: revealer_space_class,
-      vertical: vertical,
-
-      children: widgets,
-    }),
+    child: single_widget,
   });
 
-  const box = Widget.Box({
-    class_name: revealer_box_class,
+  // button widget to reveal/unreveal the single widget
+  const revealer_button = Widget.Button({
+    class_name: revealer_button_class__btn,
+    label: open_icon,
+
+    on_clicked: (self) => {
+      revealer.reveal_child = !revealer.reveal_child;
+
+      if (revealer.revealChild === false) {
+        self.label = open_icon;
+      } else {
+        self.label = close_icon;
+      }
+    },
+  });
+
+  // main container
+  const container = Widget.Box({
+    class_name: revealer_container_class__box,
     vertical: true,
 
-    children: [
-      revealer,
-      Widget.Button({
-        class_name: revealer_button_class,
-        label: icon,
-
-        on_clicked: () => (revealer.reveal_child = !revealer.reveal_child),
-      }),
-    ],
+    children: [revealer, revealer_button],
   });
 
-  return box;
+  return container;
 }

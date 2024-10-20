@@ -26,7 +26,7 @@ export default () =>
     class_name: "wifi_box all_widget_boxs",
     tooltipText: lib_network.wifi
       .bind("ssid")
-      .as((ssid) => `Wifi SSID: ${ssid}` || "unknown"),
+      .as((ssid) => ` Wifi SSID: ${ssid}` || "unknown"),
 
     on_clicked: () =>
       toggle_popup_applications("nm-connection-editor", "nm-connection-editor"),

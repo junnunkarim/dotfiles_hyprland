@@ -15,40 +15,36 @@ const icons = {
 };
 
 const brightness_icon = Widget.Icon({
-  class_name: "brightness_icon",
+  class_name: "brightness_icon__icn",
 });
 
-// contains the icon widget
-const brightness_button = Widget.Button({
-  class_name: "brightness_button all_buttons",
-
-  // on_clicked: () => (brightness_label.visible = !brightness_label.visible),
-
-  child: brightness_icon,
-});
-
-const brightness_label = Widget.Label({
-  class_name: "brightness_label all_labels",
+const brightness_level = Widget.Label({
+  class_name: "brightness_level__lbl",
   label: lib_brightness
     .bind("screen-value")
     .as((v) => `${Math.round(v * 100)}`),
 });
 
-// contains both the button and the label widgets
-const brightness_box = Widget.Box({
-  class_name: "brightness_box all_widget_boxs",
+// contains both the icon and the level widgets
+const brightness_container = Widget.Box({
+  class_name: "brightness_container__box",
   vertical: true,
 
-  children: [brightness_button, brightness_label],
+  children: [brightness_icon, brightness_level],
 });
 
-// contains the box widget
+const brightness_button_container = Widget.Button({
+  class_name: "brightness_button_container__btn",
+  child: brightness_container,
+});
+
+// contains the container button widget
 const brightness_revealer = Widget.Revealer({
   revealChild: true,
   transitionDuration: 1000,
   transition: "slide_up",
 
-  child: brightness_box,
+  child: brightness_button_container,
 });
 
 const hide_widget = (revealer_widget) => {
@@ -65,8 +61,8 @@ const reset_timer = (revealer_widget) => {
   // show the widget
   revealer_widget.reveal_child = true;
 
-  // set a timer to hide the widget after 3 seconds
-  timer_id = GLib.timeout_add(GLib.PRIORITY_DEFAULT, 3000, () => {
+  // set a timer to hide the widget after 5 seconds
+  timer_id = GLib.timeout_add(GLib.PRIORITY_DEFAULT, 5000, () => {
     hide_widget(revealer_widget);
     // reset timer_id after it runs
     timer_id = null;
@@ -84,7 +80,7 @@ brightness_revealer.hook(lib_brightness, (self) => {
   );
 
   brightness_icon.icon = `display-brightness-${icons[icon]}-symbolic`;
-  brightness_label.label = `${brightness_value}`;
+  brightness_level.label = `${brightness_value}`;
 
   self.tooltipText = `󰃟 Brightness Level: ${brightness_value}%`;
 

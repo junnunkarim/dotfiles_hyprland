@@ -14,39 +14,34 @@ const icons = {
 };
 
 const volume_icon = Widget.Icon({
-  class_name: "volume_icon all_icons",
+  class_name: "volume_icon__icn",
 });
 
-// contains the icon widget
-const volume_button = Widget.Button({
-  class_name: "volume_button all_buttons",
-
-  on_clicked: () => (lib_audio.speaker.is_muted = !lib_audio.speaker.is_muted),
-  // on_clicked: () => (volume_label.visible = !volume_label.visible),
-
-  child: volume_icon,
-});
-
-const volume_label = Widget.Label({
-  class_name: "volume_label all_labels",
+const volume_level = Widget.Label({
+  class_name: "volume_level__lbl",
   label: `${lib_audio.speaker.volume * 100}`,
 });
 
-// contains both the button and the label widgets
-const volume_box = Widget.Box({
-  class_name: "volume_box all_widget_boxs",
+// contains both the button and the level widgets
+const volume_container = Widget.Box({
+  class_name: "volume_container__box",
   vertical: true,
 
-  children: [volume_button, volume_label],
+  children: [volume_icon, volume_level],
 });
 
-// contains the box widget
+const volume_button_container = Widget.Button({
+  class_name: "volume_button_container__btn",
+  child: volume_container,
+});
+
+// contains the container button widget
 const volume_revealer = Widget.Revealer({
   revealChild: true,
   transitionDuration: 1000,
   transition: "slide_down",
 
-  child: volume_box,
+  child: volume_button_container,
 });
 
 // console.log(volume_revealer.child.class_name);
@@ -65,8 +60,8 @@ const reset_timer = (revealer_widget) => {
   // show the widget
   revealer_widget.reveal_child = true;
 
-  // set a timer to hide the widget after 3 seconds
-  timer_id = GLib.timeout_add(GLib.PRIORITY_DEFAULT, 3000, () => {
+  // set a timer to hide the widget after 5 seconds
+  timer_id = GLib.timeout_add(GLib.PRIORITY_DEFAULT, 5000, () => {
     hide_widget(revealer_widget);
     // reset timer_id after it runs
     timer_id = null;
@@ -75,9 +70,6 @@ const reset_timer = (revealer_widget) => {
     return GLib.SOURCE_REMOVE;
   });
 };
-
-// console.log(lib_audio);
-// console.log(lib_audio.speaker);
 
 // hook on revealer widget when volume changes
 volume_revealer.hook(lib_audio.speaker, (self) => {
@@ -89,7 +81,7 @@ volume_revealer.hook(lib_audio.speaker, (self) => {
   const vol_level = lib_audio.speaker.is_muted ? 0 : Math.round(vol);
 
   volume_icon.icon = `audio-volume-${icons[icon]}-symbolic`;
-  volume_label.label = `${vol_level}`;
+  volume_level.label = `${vol_level}`;
 
   self.tooltip_text = is_muted ? " Volume Muted" : ` Volume: ${vol_level}%`;
 

@@ -3,26 +3,26 @@ const lib_battery = await Service.import("battery");
 const battery_percent = lib_battery.bind("percent");
 
 const battery_icon = Widget.Icon({
-  class_name: "battery_icon all_icons",
+  class_name: "battery_icon__icn",
   icon: battery_percent.as(
     (p) => `battery-level-${Math.floor(p / 10) * 10}-symbolic`,
   ),
 });
-const battery_label = Widget.Label({
-  class_name: "battery_label all_labels",
+const battery_level = Widget.Label({
+  class_name: "battery_level__lbl",
   label: battery_percent.as((p) => `${Math.round(p)}`),
 });
 
 export default () =>
   Widget.Box({
-    class_name: "battery_box all_widget_boxs",
-    visible: lib_battery.bind("available"),
+    class_name: "battery_container__box",
     vertical: true,
+    visible: lib_battery.bind("available"),
     tooltipText: battery_percent.as(
       (level) => ` Battery Level: ${Math.round(level)}%`,
     ),
 
-    children: [battery_label, battery_icon],
+    children: [battery_level, battery_icon],
 
     setup: (self) => {
       const notify_threshold = 15;
@@ -37,16 +37,18 @@ export default () =>
         // ).toString();
 
         self.toggleClassName(
-          "battery_charging_box",
+          "battery_container_charging__box",
           battery_is_charging ? true : false,
         );
 
+        // for changing battery icon color when it is charging
         battery_icon.toggleClassName(
-          "battery_charging_icon",
+          "battery_icon_charging__icn",
           battery_is_charging ? true : false,
         );
-        battery_label.toggleClassName(
-          "battery_charging_label",
+        // for changing battery level color when it is charging
+        battery_level.toggleClassName(
+          "battery_level_charging__lbl",
           battery_is_charging ? true : false,
         );
 

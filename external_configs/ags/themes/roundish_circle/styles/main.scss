@@ -1,237 +1,250 @@
+@mixin create_border($color: #d3c6aa) {
+  border-left: 0.2rem solid $color;
+}
+
+$font: Iosevka;
+
+$font_size: 95%;
+$icon_size: $font_size * 1.15;
+$icon_glyph_size: $icon_size * 1.6;
+
+// top-left top-right bottom-right bottem-left
+$border_radius: 0px 20px 20px 0px;
+
 window {
-  &.bar {
-    background-color: rgba(39, 46, 51, 0.3);
+  &.window_bar {
+    background-color: rgba(#272e33, 0.4);
     color: #d3c6aa;
-    // opacity: 0.5;
-    // top-left top-right bottom-right bottem-left
-    border-radius: 0px 30px 30px 0px;
-  }
-}
 
-levelbar {
-  block,
-  highlight {
-    min-height: 10px;
+    border-radius: $border_radius;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
-}
-
-label {
-  font-family: Iosevka;
 }
 
 button {
+  background-color: transparent;
+
   min-width: 0;
   padding-top: 0;
   padding-bottom: 0;
-  background-color: transparent;
-  /* border-radius: 20px; */
-  border-radius: 0px 20px 20px 0px;
+  border-radius: $border_radius;
   transition: all 0.5s ease-in-out;
-  /* transition: all 0.5s cubic-bezier(0.68,-0.55,0.27,1.55); */
+  // transition: all 0.5s cubic-bezier(0.68,-0.55,0.27,1.55);
+
   &:active {
     background-color: #d3c6aa;
   }
   &:hover {
-    /* background-color: #d3c6aa; */
-    /* color: #272e33; */
-    border-bottom: 3px solid #d3c6aa;
+    border-bottom: 0.15rem solid #d3c6aa;
   }
 }
 
 /* clock widget */
-.clock_box {
+.clock_button_container__btn {
+  all: unset;
+
   background: #374145;
-  color: #e69875;
-  // top-left top-right bottom-right bottem-left
-  border-radius: 0px 20px 20px 0px;
-  margin-bottom: 20px;
-}
 
-.clock_icon {
-  background: #e69875;
-  color: #374145;
-  // top-left top-right bottom-right bottem-left
-  border-radius: inherit;
-  font-size: 35px;
-}
+  border-radius: $border_radius;
 
-.clock_label {
-  font-size: 20px;
-  padding-top: 5px;
-  padding-bottom: 10px;
-  border-left: 5px solid #e69875;
-}
-
-/* client title widget */
-.client_title_box {
-  font-size: 18px;
-  font-style: italic;
-  font-weight: 600;
-  margin-bottom: 10px;
-  // border-left: 5px solid #d3c6aa;
-}
-
-/* workspace widget */
-.workspace_box {
-  margin-bottom: 10px;
-}
-
-.workspace {
-  border-left: 5px solid #a7c080;
-  border-radius: 0px 20px 20px 0px;
-  &.workspace_active {
-    background: #3c4848;
-    .workspace_icon {
-      background: #a7c080;
-      color: #3c4848;
-      border-left: unset;
-      border-radius: inherit;
-    }
-  }
-}
-
-.workspace_icon {
-  font-size: 35px;
-
-  &:hover {
-    color: #a7c080;
-    border-radius: 0px 20px 20px 0px;
-  }
-}
-
-.workspace_client_count {
-  color: #a7c080;
-  margin-top: 1px;
-  font-size: 20px;
-  // font-weight: bold;
-}
-
-/* system-tray widget */
-.sys_tray_box {
-  background: #414b50;
-  /* border-radius: 20px; */
-  border-radius: 0px 20px 20px 0px;
-}
-
-.sys_tray_icon {
-  font-size: 23px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  border-radius: inherit;
-}
-
-.sys_tray_reveal_button {
-  background: #495156;
-  // opacity: 0.8;
-  font-size: 30px;
-  /* border-radius: 20px; */
   margin-top: 5px;
   margin-bottom: 10px;
 }
+.clock_icon__lbl {
+  all: unset;
 
-.sys_tray_reveal_box {
-  .sys_tray_reveal,
-  .sys_tray_reveal_space {
-    padding: 0px;
-    margin: 0px;
+  background: #e69875;
+  color: #374145;
+
+  font-size: $icon_glyph_size;
+  border-radius: $border_radius;
+}
+.clock_string__lbl {
+  all: unset;
+
+  color: #e69875;
+  @include create_border(#e69875);
+
+  font-size: $font_size * 1;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+}
+
+/* client title widget */
+.window_title__btn {
+  all: unset;
+
+  border-radius: $border_radius;
+  margin-bottom: 10px;
+}
+.window_title__lbl {
+  color: #d3c6aa;
+  @include create_border(#d3c6aa);
+
+  font-size: $font_size * 0.9;
+  font-style: italic;
+  font-weight: 600;
+}
+
+// workspace widget
+// contains all workspace items;
+.workspace_container__box {
+  all: unset;
+
+  @include create_border(#a7c080);
+
+  margin-bottom: 10px;
+}
+// button widget that contains a workspace item
+.workspace_item_container__btn {
+  all: unset;
+
+  border-radius: $border_radius;
+
+  &:hover {
+    color: #a7c080;
   }
+}
+// contains a workspace's icon and client-count
+.workspace_item__box {
+  border-radius: $border_radius;
+
+  // for the workspace item that is currently focused
+  &.workspace_item_active__box {
+    background: #3c4848;
+
+    .workspace_icon__lbl {
+      background: #a7c080;
+      color: #3c4848;
+    }
+  }
+}
+// a workspace's icon
+.workspace_icon__lbl {
+  font-size: $icon_glyph_size;
+  border-radius: $border_radius;
+}
+// a workspace's client-count
+.workspace_client_count__lbl {
+  color: #a7c080;
+
+  font-size: $font_size * 1;
+  margin-top: 0.1rem;
+}
+
+/* system-tray widget */
+// contains all systray icons
+.systray_container__box {
+  all: unset;
+
+  background: #414b50;
+  border-radius: $border_radius;
+}
+// individual systray icons
+.systray_icon__icn {
+  all: unset;
+
+  font-size: $icon_size;
+
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+}
+// button to reveal the systray revealer
+.systray_reveal_button__btn {
+  all: unset;
+
+  background: #495156;
+
+  font-size: $icon_glyph_size * 0.8;
+  border-radius: $border_radius;
+  margin-top: 0.2rem;
+
+  margin-bottom: 10px;
 }
 
 /* wifi widget */
 .wifi_box {
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+
   margin-bottom: 10px;
 }
-
 .wifi_icon {
-  font-size: 23px;
+  font-size: $icon_size;
 }
 
-.wifi_label {
-  font-size: 20px;
-}
+// volume widget
+.volume_button_container__btn {
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
 
-/* volume widget */
-.volume_box {
-  // border-bottom: 2px solid #d3c6aa;
-  border-radius: 20px;
-}
-
-.volume_button {
-  font-size: 22px;
-  padding-top: 10px;
-  padding-bottom: 5px;
-  border-radius: inherit;
-}
-
-.volume_label {
-  color: #d3c6aa;
-  font-size: 20px;
-  padding-bottom: 10px;
-  border-radius: inherit;
-}
-
-/* brightness widget */
-.brightness_box {
-  // border-bottom: 2px solid #d3c6aa;
-  border-radius: 20px;
-}
-
-.brightness_button {
-  font-size: 23px;
-  padding-top: 10px;
-  padding-bottom: 5px;
-  border-radius: inherit;
-}
-
-.brightness_label {
-  color: #d3c6aa;
-  font-size: 20px;
-  padding-bottom: 10px;
-  border-radius: inherit;
-}
-
-/* battery widget */
-.battery_box {
   margin-bottom: 10px;
-  // top-left top-right bottom-right bottem-left
-  border-radius: 0px 20px 20px 0px;
-  &:not(.battery_charging_box) {
+}
+.volume_icon__icn {
+  font-size: $icon_size;
+  padding-bottom: 0.4rem;
+}
+.volume_level__lbl {
+  color: #d3c6aa;
+  font-size: $font_size;
+}
+
+// brightness widget
+.brightness_button_container__btn {
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+
+  margin-bottom: 10px;
+}
+.brightness_icon__icn {
+  font-size: $icon_size;
+  padding-bottom: 0.4rem;
+}
+.brightness_level__lbl {
+  color: #d3c6aa;
+  font-size: $font_size;
+}
+
+// battery widget
+.battery_container__box {
+  border-radius: $border_radius;
+
+  margin-bottom: 5px;
+
+  &:not(.battery_container_charging__box) {
     background: #384b55;
   }
+  &.battery_container_charging__box {
+    background: #4c3743;
+  }
 }
+.battery_level__lbl {
+  font-size: $font_size;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
 
-.battery_icon {
+  &:not(.battery_level_charging__lbl) {
+    color: #6fbbb3;
+    @include create_border(#7fbbb3);
+  }
+  &.battery_level_charging__lbl {
+    color: #e67e79;
+    @include create_border(#e67e80);
+  }
+}
+.battery_icon__icn {
   color: #384b55;
-  font-size: 25px;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  border-radius: inherit;
-  &:not(.battery_charging_icon) {
+
+  font-size: $icon_size * 1.2;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: $border_radius;
+
+  &:not(.battery_icon_charging__icn) {
     background: #7fbbb3;
   }
-}
-
-.battery_label {
-  color: #7fbbb3;
-  font-size: 20px;
-  padding-top: 10px;
-  padding-bottom: 5px;
-  &:not(.battery_charging_label) {
-    border-left: 5px solid #7fbbb3;
+  &.battery_icon_charging__icn {
+    background: #e67e80;
   }
-}
-
-.battery_charging_box {
-  background: #4c3743;
-}
-
-.battery_charging_label {
-  color: #e67e80;
-  border-left: 5px solid #e67e80;
-}
-
-.battery_charging_icon {
-  background: #e67e80;
 }
