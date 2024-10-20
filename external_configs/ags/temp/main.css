@@ -1,20 +1,14 @@
-window.window_bar {
+.window_bar {
   background-color: rgba(39, 46, 51, 0.4);
   color: #d3c6aa;
-  border-radius: 0px 20px 20px 0px;
-  margin-top: 10px;
-  margin-bottom: 10px; }
+  border-radius: 0px 20px 20px 0px; }
 
 button {
-  background-color: transparent;
-  min-width: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  border-radius: 0px 20px 20px 0px;
   transition: all 0.5s ease-in-out; }
   button:active {
     background-color: #d3c6aa; }
   button:hover {
+    background-color: rgba(211, 198, 170, 0.1);
     border-bottom: 0.15rem solid #d3c6aa; }
 
 /* clock widget */
@@ -102,16 +96,20 @@ button {
   margin-bottom: 10px; }
 
 /* wifi widget */
-.wifi_box {
+.wifi_container__btn {
+  all: unset;
+  border-radius: 0px 20px 20px 0px;
   padding-top: 0.2rem;
   padding-bottom: 0.2rem;
   margin-bottom: 10px; }
 
-.wifi_icon {
+.wifi_icon__icn {
   font-size: 109.25%; }
 
 .volume_button_container__btn {
-  padding-top: 0.2rem;
+  all: unset;
+  border-radius: 0px 20px 20px 0px;
+  padding-top: 0.4rem;
   padding-bottom: 0.2rem;
   margin-bottom: 10px; }
 
@@ -124,7 +122,9 @@ button {
   font-size: 95%; }
 
 .brightness_button_container__btn {
-  padding-top: 0.2rem;
+  all: unset;
+  border-radius: 0px 20px 20px 0px;
+  padding-top: 0.4rem;
   padding-bottom: 0.2rem;
   margin-bottom: 10px; }
 

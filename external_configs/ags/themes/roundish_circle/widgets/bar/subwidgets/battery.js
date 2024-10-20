@@ -25,8 +25,10 @@ export default () =>
     children: [battery_level, battery_icon],
 
     setup: (self) => {
-      const notify_threshold = 15;
+      const notify_low_threshold = 15;
+      const notify_extreme_low_threshold = 5;
       let notify_low_battery = true;
+      let notify_extreme_low_battery = true;
 
       self.hook(lib_battery, () => {
         const battery_is_charging =
@@ -56,15 +58,35 @@ export default () =>
           lib_battery.bind("percent").emitter._percent,
         );
 
-        if (notify_low_battery && battery_percent <= notify_threshold) {
+        if (notify_low_battery && battery_percent <= notify_low_threshold) {
           // hyprctl notify [ICON] [TIME_MS] [COLOR] [MESSAGE]
           lib_hyprland.message(
             `notify 0 10000 0 fontsize:25  ${battery_percent}% battery charge remaining! Plug-in the adaptor immediately!`,
           );
 
           notify_low_battery = false;
-        } else if (!notify_low_battery && battery_percent > notify_threshold) {
+        } else if (
+          !notify_low_battery &&
+          battery_percent > notify_low_threshold
+        ) {
           notify_low_battery = true;
+        }
+
+        if (
+          notify_extreme_low_battery &&
+          battery_percent <= notify_extreme_low_threshold
+        ) {
+          // hyprctl notify [ICON] [TIME_MS] [COLOR] [MESSAGE]
+          lib_hyprland.message(
+            `notify 0 10000 0 fontsize:25  Your battery is dying! ${battery_percent}% battery charge remaining!`,
+          );
+
+          notify_extreme_low_battery = false;
+        } else if (
+          !notify_extreme_low_battery &&
+          battery_percent > notify_extreme_low_threshold
+        ) {
+          notify_extreme_low_battery = true;
         }
       });
     },

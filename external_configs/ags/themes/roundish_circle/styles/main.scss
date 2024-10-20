@@ -11,24 +11,14 @@ $icon_glyph_size: $icon_size * 1.6;
 // top-left top-right bottom-right bottem-left
 $border_radius: 0px 20px 20px 0px;
 
-window {
-  &.window_bar {
-    background-color: rgba(#272e33, 0.4);
-    color: #d3c6aa;
+.window_bar {
+  background-color: rgba(#272e33, 0.4);
+  color: #d3c6aa;
 
-    border-radius: $border_radius;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
+  border-radius: $border_radius;
 }
 
 button {
-  background-color: transparent;
-
-  min-width: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  border-radius: $border_radius;
   transition: all 0.5s ease-in-out;
   // transition: all 0.5s cubic-bezier(0.68,-0.55,0.27,1.55);
 
@@ -36,6 +26,7 @@ button {
     background-color: #d3c6aa;
   }
   &:hover {
+    background-color: rgba(#d3c6aa, 0.1);
     border-bottom: 0.15rem solid #d3c6aa;
   }
 }
@@ -164,19 +155,25 @@ button {
 }
 
 /* wifi widget */
-.wifi_box {
+.wifi_container__btn {
+  all: unset;
+
+  border-radius: $border_radius;
   padding-top: 0.2rem;
   padding-bottom: 0.2rem;
 
   margin-bottom: 10px;
 }
-.wifi_icon {
+.wifi_icon__icn {
   font-size: $icon_size;
 }
 
 // volume widget
 .volume_button_container__btn {
-  padding-top: 0.2rem;
+  all: unset;
+
+  border-radius: $border_radius;
+  padding-top: 0.4rem;
   padding-bottom: 0.2rem;
 
   margin-bottom: 10px;
@@ -192,7 +189,10 @@ button {
 
 // brightness widget
 .brightness_button_container__btn {
-  padding-top: 0.2rem;
+  all: unset;
+
+  border-radius: $border_radius;
+  padding-top: 0.4rem;
   padding-bottom: 0.2rem;
 
   margin-bottom: 10px;
