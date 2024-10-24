@@ -1,0 +1,34 @@
+@mixin create_border($color: #d3c6aa) {
+  border-left: 0.2rem solid $color;
+}
+
+@mixin unset($recursive: false) {
+  all: unset;
+
+  // if true, resets the styles of all child elements as well
+  @if $recursive {
+    * {
+      all: unset;
+    }
+  }
+}
+
+@mixin create_button() {
+  border-radius: $border_radius;
+  min-width: 1.8rem;
+  padding-top: 0px;
+  padding-bottom: 0px;
+
+  transition: all 0.5s ease-in-out;
+  /* transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); */
+
+  &:active {
+    background-color: #d3c6aa;
+  }
+  &:hover {
+    background-color: rgba(#d3c6aa, 0.1);
+
+    box-shadow: inset 0 0 0 0.02rem;
+    border-bottom: 0.15rem solid #d3c6aa;
+  }
+}

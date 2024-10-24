@@ -2,6 +2,7 @@ const lib_sys_tray = await Service.import("systemtray");
 
 const sys_tray = (item) =>
   Widget.Button({
+    class_name: "systray_button_icon__btn",
     tooltipMarkup: item.bind("tooltip_markup"),
 
     onPrimaryClick: (_, event) => item.activate(event),

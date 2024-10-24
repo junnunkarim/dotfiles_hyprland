@@ -1,0 +1,13 @@
+/* wifi widget */
+.wifi_container__btn {
+  @include unset;
+  @include create_button;
+
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+
+  margin-bottom: 10px;
+}
+.wifi_icon__icn {
+  font-size: $icon_size;
+}

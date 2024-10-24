@@ -1,0 +1,15 @@
+@import "./_clock.scss";
+@import "./_window_title.scss";
+@import "./_workspace.scss";
+@import "./_systray.scss";
+@import "./_wifi.scss";
+@import "./_volume.scss";
+@import "./_brightness.scss";
+@import "./_battery.scss";
+
+.window_bar {
+  background-color: rgba(#272e33, 0.2);
+  color: #d3c6aa;
+
+  border-radius: $border_radius;
+}

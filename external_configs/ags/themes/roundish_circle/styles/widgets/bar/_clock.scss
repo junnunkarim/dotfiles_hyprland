@@ -1,0 +1,27 @@
+// clock widget
+.clock_button_container__btn {
+  @include unset;
+  @include create_button;
+
+  background: #374145;
+
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.clock_icon__lbl {
+  background: #e69875;
+  color: #374145;
+
+  font-size: $icon_glyph_size;
+  border-radius: $border_radius;
+}
+.clock_string__lbl {
+  @include unset;
+
+  color: #e69875;
+  @include create_border(#e69875);
+
+  font-size: $font_size * 1;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+}

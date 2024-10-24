@@ -7,10 +7,11 @@ const lib_time = Variable(GLib.DateTime.new_now_local(), {
   poll: [20000, () => GLib.DateTime.new_now_local()], // 20 seconds
 });
 
-const calendar = capture_cmd_output("cal -3");
+// const calendar = capture_cmd_output("cal -3");
 const tooltip_time_date = lib_time
   .bind()
-  .as((t) => t.format(`󰥔 %I:%M %p\n %A, %d %B %Y\n\n${calendar}`));
+  // .as((t) => t.format(`󰥔 %I:%M %p\n %A, %d %B %Y\n\n${calendar}`));
+  .as((t) => t.format(`󰥔 %I:%M %p\n %A, %d %B %Y`));
 
 const clock_icon = Widget.Label({
   class_name: "clock_icon__lbl",

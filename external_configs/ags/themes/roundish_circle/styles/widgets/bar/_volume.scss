@@ -1,0 +1,18 @@
+// volume widget
+.volume_button_container__btn {
+  @include unset;
+  @include create_button;
+
+  padding-top: 0.4rem;
+  padding-bottom: 0.2rem;
+
+  margin-bottom: 10px;
+}
+.volume_icon__icn {
+  font-size: $icon_size;
+  padding-bottom: 0.4rem;
+}
+.volume_level__lbl {
+  color: #d3c6aa;
+  font-size: $font_size;
+}
