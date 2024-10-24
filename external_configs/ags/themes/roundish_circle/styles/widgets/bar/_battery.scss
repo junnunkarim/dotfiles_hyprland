@@ -5,10 +5,10 @@
   margin-bottom: 5px;
 
   &:not(.battery_container_charging__box) {
-    background: #384b55;
+    background: $battery_container_bg;
   }
   &.battery_container_charging__box {
-    background: #4c3743;
+    background: $battery_container_charging_bg;
   }
 }
 .battery_level__lbl {
@@ -17,16 +17,16 @@
   padding-bottom: 0.3rem;
 
   &:not(.battery_level_charging__lbl) {
-    color: #6fbbb3;
-    @include create_border(#7fbbb3);
+    color: $battery_label_fg;
+    @include create_border($battery_border);
   }
   &.battery_level_charging__lbl {
-    color: #e67e79;
-    @include create_border(#e67e80);
+    color: $battery_label_charging_fg;
+    @include create_border($battery_border_charging);
   }
 }
 .battery_icon__icn {
-  color: #384b55;
+  color: $battery_icon_fg;
 
   font-size: $icon_size * 1.2;
   padding-top: 0.5rem;
@@ -34,9 +34,9 @@
   border-radius: $border_radius;
 
   &:not(.battery_icon_charging__icn) {
-    background: #7fbbb3;
+    background: $battery_icon_bg;
   }
   &.battery_icon_charging__icn {
-    background: #e67e80;
+    background: $battery_icon_charging_bg;
   }
 }

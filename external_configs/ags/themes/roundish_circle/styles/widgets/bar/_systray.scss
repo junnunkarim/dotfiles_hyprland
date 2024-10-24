@@ -3,7 +3,7 @@
 .systray_container__box {
   @include unset;
 
-  background: #414b50;
+  background: $systray_bg;
   border-radius: $border_radius;
 }
 // contains individual systray icon
@@ -25,7 +25,7 @@
   @include unset;
   @include create_button;
 
-  background: #495156;
+  background: $systray_bg;
 
   font-size: $icon_glyph_size * 0.8;
   margin-top: 0.2rem;

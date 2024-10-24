@@ -8,8 +8,8 @@
 @import "./_battery.scss";
 
 .window_bar {
-  background-color: rgba(#272e33, 0.2);
-  color: #d3c6aa;
+  background-color: rgba($bar_bg, 0.2);
+  color: $label_fg;
 
   border-radius: $border_radius;
 }

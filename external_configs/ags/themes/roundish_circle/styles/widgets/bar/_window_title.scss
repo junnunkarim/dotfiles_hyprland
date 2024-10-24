@@ -3,12 +3,12 @@
   @include unset;
   @include create_button;
 
-  margin-bottom: 20px;
+  margin-top: 10px;
   margin-bottom: 20px;
 }
 .window_title__lbl {
-  color: #d3c6aa;
-  /* @include create_border(#d3c6aa); */
+  color: $label_fg;
+  /* @include create_border($window_title_border); */
 
   font-size: $font_size * 0.9;
   font-style: italic;

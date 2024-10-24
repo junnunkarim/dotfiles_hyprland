@@ -3,7 +3,7 @@
 .workspace_container__box {
   @include unset;
 
-  @include create_border(#a7c080);
+  @include create_border($workspace_border);
 
   margin-bottom: 10px;
 }
@@ -13,7 +13,8 @@
   @include create_button;
 
   &:hover {
-    color: #a7c080;
+    color: $workspace_item_active_icon_bg;
+    border-color: $workspace_item_active_icon_bg;
   }
 }
 // contains a workspace's icon and client-count
@@ -22,11 +23,11 @@
 
   // for the workspace item that is currently focused
   &.workspace_item_active__box {
-    background: #3c4848;
+    background: $workspace_item_active_container_bg;
 
     .workspace_icon__lbl {
-      background: #a7c080;
-      color: #3c4848;
+      background: $workspace_item_active_icon_bg;
+      color: $workspace_item_active_icon_fg;
     }
   }
 }
@@ -37,7 +38,7 @@
 }
 // a workspace's client-count
 .workspace_client_count__lbl {
-  color: #a7c080;
+  color: $workspace_item_active_label_fg;
 
   font-size: $font_size * 1;
   margin-top: 0.1rem;

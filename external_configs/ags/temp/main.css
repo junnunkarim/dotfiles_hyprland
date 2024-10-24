@@ -8,7 +8,10 @@
   /* transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); */
   background: #374145;
   margin-top: 5px;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  /* &:hover { */
+  /*   border-color: $clock_border; */
+  /* } */ }
   .clock_button_container__btn:active {
     background-color: #d3c6aa; }
   .clock_button_container__btn:hover {
@@ -38,7 +41,7 @@
   padding-bottom: 0px;
   transition: all 0.5s ease-in-out;
   /* transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); */
-  margin-bottom: 20px;
+  margin-top: 10px;
   margin-bottom: 20px; }
   .window_title__btn:active {
     background-color: #d3c6aa; }
@@ -49,7 +52,7 @@
 
 .window_title__lbl {
   color: #d3c6aa;
-  /* @include create_border(#d3c6aa); */
+  /* @include create_border($window_title_border); */
   font-size: 85.5%;
   font-style: italic;
   font-weight: 600; }
@@ -74,7 +77,8 @@
     box-shadow: inset 0 0 0 0.02rem;
     border-bottom: 0.15rem solid #d3c6aa; }
   .workspace_item_container__btn:hover {
-    color: #a7c080; }
+    color: #a7c080;
+    border-color: #a7c080; }
 
 .workspace_item__box {
   border-radius: 0px 20px 20px 0px; }
@@ -129,7 +133,7 @@
   padding-bottom: 0px;
   transition: all 0.5s ease-in-out;
   /* transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); */
-  background: #495156;
+  background: #414b50;
   font-size: 139.84%;
   margin-top: 0.2rem;
   margin-bottom: 10px; }
@@ -160,7 +164,8 @@
     border-bottom: 0.15rem solid #d3c6aa; }
 
 .wifi_icon__icn {
-  font-size: 109.25%; }
+  font-size: 109.25%;
+  color: #d3c6aa; }
 
 .volume_button_container__btn {
   all: unset;
@@ -231,7 +236,7 @@
     border-left: 0.2rem solid #7fbbb3; }
   .battery_level__lbl.battery_level_charging__lbl {
     color: #e67e79;
-    border-left: 0.2rem solid #e67e80; }
+    border-left: 0.2rem solid #e67e79; }
 
 .battery_icon__icn {
   color: #384b55;
@@ -242,7 +247,7 @@
   .battery_icon__icn:not(.battery_icon_charging__icn) {
     background: #7fbbb3; }
   .battery_icon__icn.battery_icon_charging__icn {
-    background: #e67e80; }
+    background: #e67e79; }
 
 .window_bar {
   background-color: rgba(39, 46, 51, 0.2);

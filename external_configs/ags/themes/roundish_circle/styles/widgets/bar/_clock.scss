@@ -1,16 +1,20 @@
-// clock widget
+// clock subwidget
 .clock_button_container__btn {
   @include unset;
   @include create_button;
 
-  background: #374145;
+  background: $clock_container_bg;
 
   margin-top: 5px;
   margin-bottom: 10px;
+
+  /* &:hover { */
+  /*   border-color: $clock_border; */
+  /* } */
 }
 .clock_icon__lbl {
-  background: #e69875;
-  color: #374145;
+  background: $clock_icon_bg;
+  color: $clock_icon_fg;
 
   font-size: $icon_glyph_size;
   border-radius: $border_radius;
@@ -18,8 +22,8 @@
 .clock_string__lbl {
   @include unset;
 
-  color: #e69875;
-  @include create_border(#e69875);
+  color: $clock_label_fg;
+  @include create_border($clock_border);
 
   font-size: $font_size * 1;
   padding-top: 0.3rem;
