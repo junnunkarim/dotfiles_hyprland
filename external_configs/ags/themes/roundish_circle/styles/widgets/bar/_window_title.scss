@@ -3,8 +3,11 @@
   @include unset;
   @include create_button;
 
-  margin-top: 10px;
-  margin-bottom: 20px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
 }
 .window_title__lbl {
   color: $label_fg;

@@ -2,7 +2,7 @@
 .battery_container__box {
   border-radius: $border_radius;
 
-  margin-bottom: 5px;
+  /* margin-bottom: 0.25rem; */
 
   &:not(.battery_container_charging__box) {
     background: $battery_container_bg;

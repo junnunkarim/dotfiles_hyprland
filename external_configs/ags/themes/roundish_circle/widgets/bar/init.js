@@ -7,7 +7,6 @@ import widget_volume from "./subwidgets/volume.js";
 import widget_brightness from "./subwidgets/brightness.js";
 import widget_battery from "./subwidgets/battery.js";
 
-// import { create_revealer_box } from "../helpers/revealer_box.js";
 const { create_revealer_box } = await import(
   `file://${App.configDir}/helpers/revealer_box.js`
 );
@@ -31,7 +30,6 @@ const sys_tray_reveal_container = create_revealer_box({
 
 const start_widget = Widget.Box({
   vertical: true,
-  // spacing: 10,
   children: [clock_container, window_button_title],
 });
 const center_widget = Widget.Box({
@@ -41,8 +39,6 @@ const center_widget = Widget.Box({
 const end_widget = Widget.Box({
   vertical: true,
   vpack: "end",
-  // hpack: "end",
-  // spacing: 10,
   children: [
     sys_tray_reveal_container,
     wifi_container,
@@ -53,12 +49,15 @@ const end_widget = Widget.Box({
 });
 
 // layout of the bar
-export default (monitor = 0) =>
+export const setup_bar = (monitor = 0) =>
   Widget.Window({
-    name: `bar-${monitor}`, // name has to be unique
+    // name has to be unique
+    name: `bar-${monitor}`,
     class_name: "window_bar",
     monitor,
     anchor: ["left", "top", "bottom"],
+    // [top/bottom, left/right]
+    margins: [10, 0],
     exclusivity: "exclusive",
     // widthRequest: 40,
     child: Widget.CenterBox({

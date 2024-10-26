@@ -1,5 +1,5 @@
 import GLib from "gi://GLib";
-const { capture_cmd_output, toggle_popup_applications } = await import(
+const { toggle_popup_applications } = await import(
   `file://${App.configDir}/helpers/utils.js`
 );
 
