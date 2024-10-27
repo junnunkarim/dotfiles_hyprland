@@ -29,7 +29,7 @@ export const setup_styles = (scss_directory, css_to_load, current_theme) => {
   Utils.monitorFile(
     `${App.configDir}/user_options.json`,
     // generate widget colors for the colorscheme
-    () => generate_colors(),
+    () => generate_colors(current_theme),
   );
 
   // main scss to complie

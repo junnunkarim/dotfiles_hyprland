@@ -17,9 +17,7 @@ def change_wallpaper(wallpaper: str, directory: str = "~/.config/wallpaper/"):
     wall_directory = Path(directory + wallpaper).expanduser()
 
     cmd = ["swww", "img", "--transition-type", "any", f"{wall_directory}"]
-    out_1 = subprocess.run(cmd, encoding="utf-8", capture_output=True)
-    print(out_1.stderr)
-    print(out_1.stdout)
+    subprocess.run(cmd, encoding="utf-8")
 
 
 # main function to handle the cli arguments

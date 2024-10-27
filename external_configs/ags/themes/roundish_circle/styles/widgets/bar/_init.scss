@@ -11,10 +11,13 @@
 /*   background-color: rgba($bar_bg, $bar_opacity); */
 /* } */
 
+* {
+  transition: $transition_animation;
+}
+
 .window_bar {
   background-color: rgba($bar_bg, $bar_opacity);
   color: $label_fg;
 
   border-radius: $border_radius;
-  transition: $transition_animation;
 }

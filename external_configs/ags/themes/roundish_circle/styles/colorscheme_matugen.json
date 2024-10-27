@@ -1,0 +1,31 @@
+{
+  "label_fg": "#c3c8bb",
+
+  "bar_bg": "#1d211a",
+
+  "clock_container_bg": "#3e4a36",
+  "clock_icon_bg": "#d8e7cb",
+  "clock_icon_fg": "#3e4a36",
+  "clock_label_fg": "#d8e7cb",
+  "clock_border": "#d8e7cb",
+
+  "window_title_border": "#e1e4d9",
+
+  "workspace_item_active_icon_bg": "#a9d291",
+  "workspace_item_active_icon_fg": "#173807",
+  "workspace_item_active_container_bg": "#173807",
+  "workspace_item_active_label_fg": "#a9d291",
+  "workspace_border": "#a9d291",
+
+  "systray_bg": "#1e4e4f",
+
+  "battery_container_bg": "#003738",
+  "battery_container_charging_bg": "#690005",
+  "battery_label_fg": "#a0cfd0",
+  "battery_label_charging_fg": "#ffb4ab",
+  "battery_icon_fg": "#003738",
+  "battery_icon_bg": "#a0cfd0",
+  "battery_icon_charging_bg": "#ffb4ab",
+  "battery_border": "#a0cfd0",
+  "battery_border_charging": "#ffb4ab"
+}

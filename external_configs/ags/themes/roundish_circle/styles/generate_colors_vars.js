@@ -90,6 +90,7 @@ export const generate_colors = (current_theme) => {
 
   // get the json object of the selected colorscheme
   const colors = get_colors(user_options.colorscheme);
+  // const scss_colors_location = `${App.configDir}/themes/${user_options.theme}/styles/_colors.scss`;
   const scss_colors_location = `${App.configDir}/themes/${current_theme}/styles/_colors.scss`;
 
   // write the scss color variables to the `_colors.scss`

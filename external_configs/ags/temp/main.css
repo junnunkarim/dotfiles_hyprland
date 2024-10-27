@@ -4,30 +4,30 @@
   min-width: 1.8rem;
   padding-top: 0rem;
   padding-bottom: 0rem;
-  transition: all 0.5s ease-in-out;
-  background: #3c3836;
+  /* transition: $transition_animation; */
+  background: #3e4a36;
   /* margin-top: 0.25rem; */
   margin-bottom: 0.5rem;
   /* &:hover { */
   /*   border-color: $clock_border; */
   /* } */ }
   .clock_button_container__btn:active {
-    background-color: #ebdbb2; }
+    background-color: #c3c8bb; }
   .clock_button_container__btn:hover {
-    background-color: rgba(235, 219, 178, 0.1);
+    background-color: rgba(195, 200, 187, 0.1);
     box-shadow: inset 0 0 0 0.02rem;
-    border-bottom: 0.15rem solid #ebdbb2; }
+    border-bottom: 0.15rem solid #c3c8bb; }
 
 .clock_icon__lbl {
-  background: #d65d0e;
-  color: #3c3836;
+  background: #d8e7cb;
+  color: #3e4a36;
   font-size: 174.8%;
   border-radius: 0rem 1rem 1rem 0rem; }
 
 .clock_string__lbl {
   all: unset;
-  color: #fe8019;
-  border-left: 0.2rem solid #d65d0e;
+  color: #d8e7cb;
+  border-left: 0.2rem solid #d8e7cb;
   font-size: 95%;
   padding-top: 0.3rem;
   padding-bottom: 0.3rem; }
@@ -38,20 +38,20 @@
   min-width: 1.8rem;
   padding-top: 0rem;
   padding-bottom: 0rem;
-  transition: all 0.5s ease-in-out;
+  /* transition: $transition_animation; */
   padding-top: 1rem;
   padding-bottom: 1rem;
   margin-top: 0.5rem;
   margin-bottom: 1rem; }
   .window_title__btn:active {
-    background-color: #ebdbb2; }
+    background-color: #c3c8bb; }
   .window_title__btn:hover {
-    background-color: rgba(235, 219, 178, 0.1);
+    background-color: rgba(195, 200, 187, 0.1);
     box-shadow: inset 0 0 0 0.02rem;
-    border-bottom: 0.15rem solid #ebdbb2; }
+    border-bottom: 0.15rem solid #c3c8bb; }
 
 .window_title__lbl {
-  color: #ebdbb2;
+  color: #c3c8bb;
   /* @include create_border($window_title_border); */
   font-size: 85.5%;
   font-style: italic;
@@ -59,7 +59,7 @@
 
 .workspace_container__box {
   all: unset;
-  border-left: 0.2rem solid #98971a;
+  border-left: 0.2rem solid #a9d291;
   margin-bottom: 0.5rem; }
 
 .workspace_item_container__btn {
@@ -68,31 +68,31 @@
   min-width: 1.8rem;
   padding-top: 0rem;
   padding-bottom: 0rem;
-  transition: all 0.5s ease-in-out; }
+  /* transition: $transition_animation; */ }
   .workspace_item_container__btn:active {
-    background-color: #ebdbb2; }
+    background-color: #c3c8bb; }
   .workspace_item_container__btn:hover {
-    background-color: rgba(235, 219, 178, 0.1);
+    background-color: rgba(195, 200, 187, 0.1);
     box-shadow: inset 0 0 0 0.02rem;
-    border-bottom: 0.15rem solid #ebdbb2; }
+    border-bottom: 0.15rem solid #c3c8bb; }
   .workspace_item_container__btn:hover {
-    color: #98971a;
-    border-color: #98971a; }
+    color: #a9d291;
+    border-color: #a9d291; }
 
 .workspace_item__box {
   border-radius: 0rem 1rem 1rem 0rem; }
   .workspace_item__box.workspace_item_active__box {
-    background: #3c3836; }
+    background: #173807; }
     .workspace_item__box.workspace_item_active__box .workspace_icon__lbl {
-      background: #98971a;
-      color: #3c3836; }
+      background: #a9d291;
+      color: #173807; }
 
 .workspace_icon__lbl {
   font-size: 174.8%;
   border-radius: 0rem 1rem 1rem 0rem; }
 
 .workspace_client_count__lbl {
-  color: #98971a;
+  color: #a9d291;
   font-size: 95%;
   margin-top: 0.1rem;
   margin-bottom: 0.1rem; }
@@ -100,7 +100,7 @@
 /* system-tray widget */
 .systray_container__box {
   all: unset;
-  background: #504945;
+  background: #1e4e4f;
   border-radius: 0rem 1rem 1rem 0rem; }
 
 .systray_button_icon__btn {
@@ -109,15 +109,15 @@
   min-width: 1.8rem;
   padding-top: 0rem;
   padding-bottom: 0rem;
-  transition: all 0.5s ease-in-out;
+  /* transition: $transition_animation; */
   padding-top: 0.4rem;
   padding-bottom: 0.4rem; }
   .systray_button_icon__btn:active {
-    background-color: #ebdbb2; }
+    background-color: #c3c8bb; }
   .systray_button_icon__btn:hover {
-    background-color: rgba(235, 219, 178, 0.1);
+    background-color: rgba(195, 200, 187, 0.1);
     box-shadow: inset 0 0 0 0.02rem;
-    border-bottom: 0.15rem solid #ebdbb2; }
+    border-bottom: 0.15rem solid #c3c8bb; }
 
 .systray_icon__icn {
   all: unset;
@@ -129,17 +129,17 @@
   min-width: 1.8rem;
   padding-top: 0rem;
   padding-bottom: 0rem;
-  transition: all 0.5s ease-in-out;
-  background: #504945;
+  /* transition: $transition_animation; */
+  background: #1e4e4f;
   font-size: 139.84%;
   margin-top: 0.2rem;
   margin-bottom: 0.5rem; }
   .systray_reveal_button__btn:active {
-    background-color: #ebdbb2; }
+    background-color: #c3c8bb; }
   .systray_reveal_button__btn:hover {
-    background-color: rgba(235, 219, 178, 0.1);
+    background-color: rgba(195, 200, 187, 0.1);
     box-shadow: inset 0 0 0 0.02rem;
-    border-bottom: 0.15rem solid #ebdbb2; }
+    border-bottom: 0.15rem solid #c3c8bb; }
 
 /* wifi widget */
 .wifi_container__btn {
@@ -148,20 +148,20 @@
   min-width: 1.8rem;
   padding-top: 0rem;
   padding-bottom: 0rem;
-  transition: all 0.5s ease-in-out;
+  /* transition: $transition_animation; */
   padding-top: 0.2rem;
   padding-bottom: 0.2rem;
   margin-bottom: 0.5rem; }
   .wifi_container__btn:active {
-    background-color: #ebdbb2; }
+    background-color: #c3c8bb; }
   .wifi_container__btn:hover {
-    background-color: rgba(235, 219, 178, 0.1);
+    background-color: rgba(195, 200, 187, 0.1);
     box-shadow: inset 0 0 0 0.02rem;
-    border-bottom: 0.15rem solid #ebdbb2; }
+    border-bottom: 0.15rem solid #c3c8bb; }
 
 .wifi_icon__icn {
   font-size: 109.25%;
-  color: #ebdbb2; }
+  color: #c3c8bb; }
 
 .volume_button_container__btn {
   all: unset;
@@ -169,23 +169,23 @@
   min-width: 1.8rem;
   padding-top: 0rem;
   padding-bottom: 0rem;
-  transition: all 0.5s ease-in-out;
+  /* transition: $transition_animation; */
   padding-top: 0.4rem;
   padding-bottom: 0.2rem;
   margin-bottom: 0.5rem; }
   .volume_button_container__btn:active {
-    background-color: #ebdbb2; }
+    background-color: #c3c8bb; }
   .volume_button_container__btn:hover {
-    background-color: rgba(235, 219, 178, 0.1);
+    background-color: rgba(195, 200, 187, 0.1);
     box-shadow: inset 0 0 0 0.02rem;
-    border-bottom: 0.15rem solid #ebdbb2; }
+    border-bottom: 0.15rem solid #c3c8bb; }
 
 .volume_icon__icn {
   font-size: 109.25%;
   padding-bottom: 0.4rem; }
 
 .volume_level__lbl {
-  color: #ebdbb2;
+  color: #c3c8bb;
   font-size: 95%; }
 
 .brightness_button_container__btn {
@@ -194,60 +194,62 @@
   min-width: 1.8rem;
   padding-top: 0rem;
   padding-bottom: 0rem;
-  transition: all 0.5s ease-in-out;
+  /* transition: $transition_animation; */
   padding-top: 0.4rem;
   padding-bottom: 0.2rem;
   margin-bottom: 0.5rem; }
   .brightness_button_container__btn:active {
-    background-color: #ebdbb2; }
+    background-color: #c3c8bb; }
   .brightness_button_container__btn:hover {
-    background-color: rgba(235, 219, 178, 0.1);
+    background-color: rgba(195, 200, 187, 0.1);
     box-shadow: inset 0 0 0 0.02rem;
-    border-bottom: 0.15rem solid #ebdbb2; }
+    border-bottom: 0.15rem solid #c3c8bb; }
 
 .brightness_icon__icn {
   font-size: 109.25%;
   padding-bottom: 0.4rem; }
 
 .brightness_level__lbl {
-  color: #ebdbb2;
+  color: #c3c8bb;
   font-size: 95%; }
 
 .battery_container__box {
   border-radius: 0rem 1rem 1rem 0rem;
   /* margin-bottom: 0.25rem; */ }
   .battery_container__box:not(.battery_container_charging__box) {
-    background: #3c3836; }
+    background: #003738; }
   .battery_container__box.battery_container_charging__box {
-    background: #3c3836; }
+    background: #690005; }
 
 .battery_level__lbl {
   font-size: 95%;
   padding-top: 0.3rem;
   padding-bottom: 0.3rem; }
   .battery_level__lbl:not(.battery_level_charging__lbl) {
-    color: #fabd2f;
-    border-left: 0.2rem solid #d79921; }
+    color: #a0cfd0;
+    border-left: 0.2rem solid #a0cfd0; }
   .battery_level__lbl.battery_level_charging__lbl {
-    color: #fb4934;
-    border-left: 0.2rem solid #cc241d; }
+    color: #ffb4ab;
+    border-left: 0.2rem solid #ffb4ab; }
 
 .battery_icon__icn {
-  color: #3c3836;
+  color: #003738;
   font-size: 131.1%;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   border-radius: 0rem 1rem 1rem 0rem; }
   .battery_icon__icn:not(.battery_icon_charging__icn) {
-    background: #d79921; }
+    background: #a0cfd0; }
   .battery_icon__icn.battery_icon_charging__icn {
-    background: #cc241d; }
+    background: #ffb4ab; }
 
 /* window { */
 /*   background-color: rgba($bar_bg, $bar_opacity); */
 /* } */
-.window_bar {
-  background-color: rgba(40, 40, 40, 0.8);
-  color: #ebdbb2;
-  border-radius: 0rem 1rem 1rem 0rem;
+* {
   transition: all 0.5s ease-in-out; }
+
+.window_bar {
+  background-color: rgba(29, 33, 26, 0.8);
+  color: #c3c8bb;
+  border-radius: 0rem 1rem 1rem 0rem; }
