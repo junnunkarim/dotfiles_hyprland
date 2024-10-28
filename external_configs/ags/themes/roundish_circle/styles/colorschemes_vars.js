@@ -1,4 +1,4 @@
-const colorschemes = {
+const colorschemes_vars = {
   catppuccin_macchiato: {
     label_fg: "#cad3f5",
     bar_bg: "#181926",
@@ -23,6 +23,8 @@ const colorschemes = {
     battery_icon_charging_bg: "#ed8796",
     battery_border: "#a6da95",
     battery_border_charging: "#ed8796",
+
+    bar_opacity: "0.8",
 
     hyprland_border: "ee99a0",
   },
@@ -51,6 +53,8 @@ const colorschemes = {
     battery_border: "#ffb86c",
     battery_border_charging: "#ff5555",
 
+    bar_opacity: "0.8",
+
     hyprland_border: "bd93f9",
   },
   everblush: {
@@ -77,6 +81,8 @@ const colorschemes = {
     battery_icon_charging_bg: "#e57474",
     battery_border: "#6cbfbf",
     battery_border_charging: "#e57474",
+
+    bar_opacity: "0.8",
 
     hyprland_border: "8ccf7e",
   },
@@ -105,6 +111,8 @@ const colorschemes = {
     battery_border: "#7fbbb3",
     battery_border_charging: "#e67e79",
 
+    bar_opacity: "0.8",
+
     hyprland_border: "a7c080",
   },
   gruvbox: {
@@ -131,6 +139,8 @@ const colorschemes = {
     battery_icon_charging_bg: "#cc241d",
     battery_border: "#d79921",
     battery_border_charging: "#cc241d",
+
+    bar_opacity: "0.8",
 
     hyprland_border: "98971a",
   },
@@ -159,6 +169,8 @@ const colorschemes = {
     battery_border: "#a3be8c",
     battery_border_charging: "#bf616a",
 
+    bar_opacity: "0.8",
+
     hyprland_border: "81a1c1",
   },
   rose_pine: {
@@ -186,11 +198,13 @@ const colorschemes = {
     battery_border: "#c4a7e7",
     battery_border_charging: "#eb6f92",
 
+    bar_opacity: "0.8",
+
     hyprland_border: "d7827e",
   },
 };
 
-export const get_colors = (selected_colorscheme = "gruvbox") => {
+export const get_colors_vars = (selected_colorscheme = "gruvbox") => {
   if (selected_colorscheme == "matugen") {
     const user_options = JSON.parse(
       Utils.readFile(`${App.configDir}/user_options.json`),
@@ -204,6 +218,6 @@ export const get_colors = (selected_colorscheme = "gruvbox") => {
 
     return matugen_colors;
   } else {
-    return colorschemes[selected_colorscheme];
+    return colorschemes_vars[selected_colorscheme];
   }
 };

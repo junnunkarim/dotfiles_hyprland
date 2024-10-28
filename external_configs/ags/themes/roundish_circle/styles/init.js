@@ -19,22 +19,34 @@ const reload_scss = (target_scss, css_to_load) => {
 };
 
 // called by the `init.js` of the theme directory
-export const setup_styles = (scss_directory, css_to_load, current_theme) => {
-  // needed
-  generate_colors(current_theme);
-  generate_vars(current_theme);
+export const setup_styles = (scss_directory, css_to_load) => {
+  // needed for generating colors and vars for the first time
+  const user_options = JSON.parse(
+    Utils.readFile(`${App.configDir}/user_options.json`),
+  );
+  generate_colors(user_options);
+  generate_vars(user_options);
 
   // track changes in the `user_options.json` file and
-  // change colorscheme according to the change
+  // change colorscheme or theme according to the change
   Utils.monitorFile(
     `${App.configDir}/user_options.json`,
     // generate widget colors for the colorscheme
-    () => generate_colors(current_theme),
+    () => {
+      // everytime the user changes any variable in `user_options.json`,
+      // fetch the variables again
+      const user_options = JSON.parse(
+        Utils.readFile(`${App.configDir}/user_options.json`),
+      );
+
+      generate_colors(user_options);
+      generate_vars(user_options);
+    },
   );
 
   // main scss to complie
   const target_scss = `${scss_directory}/main.scss`;
-  // needed
+  // needed for compiling scss for the first time
   reload_scss(target_scss, css_to_load);
 
   // autoreload css when scss files are modified
