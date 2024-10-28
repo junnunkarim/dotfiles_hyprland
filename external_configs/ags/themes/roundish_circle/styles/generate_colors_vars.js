@@ -1,4 +1,7 @@
 import { get_colors } from "./colorschemes.js";
+const { execute_cmd } = await import(
+  `file://${App.configDir}/helpers/utils.js`
+);
 
 // function to generate scss color variables
 const scss_format = (name, value) => `$${name}: ${value};`;
@@ -90,8 +93,12 @@ export const generate_colors = (current_theme) => {
 
   // get the json object of the selected colorscheme
   const colors = get_colors(user_options.colorscheme);
-  // const scss_colors_location = `${App.configDir}/themes/${user_options.theme}/styles/_colors.scss`;
   const scss_colors_location = `${App.configDir}/themes/${current_theme}/styles/_colors.scss`;
+
+  // switch border color of hyprland
+  execute_cmd(
+    `hyprctl keyword general:col.active_border "rgba(${colors.hyprland_border}ff)"`,
+  );
 
   // write the scss color variables to the `_colors.scss`
   // file each time the colorscheme changes
