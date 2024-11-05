@@ -26,14 +26,13 @@
   }
 }
 .battery_icon__icn {
-  color: $battery_icon_fg;
-
   font-size: $icon_size * 1.2;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   border-radius: $border_radius;
 
   &:not(.battery_icon_charging__icn) {
+    color: $battery_icon_fg;
     background: $battery_icon_bg;
   }
   &.battery_icon_charging__icn {

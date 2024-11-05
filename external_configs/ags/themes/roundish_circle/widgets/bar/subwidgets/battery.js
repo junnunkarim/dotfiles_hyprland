@@ -2,11 +2,35 @@ const lib_hyprland = await Service.import("hyprland");
 const lib_battery = await Service.import("battery");
 const battery_percent = lib_battery.bind("percent");
 
+const get_icons = (is_charging, percent) => {
+  const charging_icons = {
+    99: "full-charged-",
+    40: "good-charging-",
+    5: "low-charging-",
+    0: "empty-charging-",
+  };
+  const icons = {
+    100: "",
+    40: "good-",
+    5: "low-",
+    0: "empty-",
+  };
+
+  if (is_charging === true) {
+    const charging_icon = [99, 40, 5, 0].find(
+      (threshold) => threshold <= percent,
+    );
+
+    return `battery-${charging_icons[charging_icon]}symbolic`;
+  } else {
+    const icon = [100, 40, 5, 0].find((threshold) => threshold <= percent);
+
+    return `battery-${icons[icon]}symbolic`;
+  }
+};
+
 const battery_icon = Widget.Icon({
   class_name: "battery_icon__icn",
-  icon: battery_percent.as(
-    (p) => `battery-level-${Math.floor(p / 10) * 10}-symbolic`,
-  ),
 });
 const battery_level = Widget.Label({
   class_name: "battery_level__lbl",
@@ -33,10 +57,15 @@ export default () =>
       self.hook(lib_battery, () => {
         const battery_is_charging =
           lib_battery.bind("percent").emitter._charging;
-
+        const battery_percent = Math.round(
+          lib_battery.bind("percent").emitter._percent,
+        );
         // self.tooltipText = Object.entries(
         //   lib_battery.bind("percent").emitter,
         // ).toString();
+
+        // for changing battery icon when it is charging
+        battery_icon.icon = get_icons(battery_is_charging, battery_percent);
 
         self.toggleClassName(
           "battery_container_charging__box",
@@ -54,10 +83,7 @@ export default () =>
           battery_is_charging ? true : false,
         );
 
-        const battery_percent = Math.round(
-          lib_battery.bind("percent").emitter._percent,
-        );
-
+        // TODO: need to clean up the logic
         if (notify_low_battery && battery_percent <= notify_low_threshold) {
           // hyprctl notify [ICON] [TIME_MS] [COLOR] [MESSAGE]
           lib_hyprland.message(
