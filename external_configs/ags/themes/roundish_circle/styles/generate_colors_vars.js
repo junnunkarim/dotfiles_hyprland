@@ -87,7 +87,7 @@ const vars_to_write = (colors_vars) => {
 
 // called by the `init.js` in the `styles` directory
 export const generate_colors = (user_options) => {
-  // TODO: this function is getting executed multiple time, need to fix this
+  // TODO: this function is getting executed multiple times, need to fix this
   console.log(`LOG: Loaded Colorscheme - "${user_options.colorscheme}"`);
 
   // get the json object of the selected colorscheme
