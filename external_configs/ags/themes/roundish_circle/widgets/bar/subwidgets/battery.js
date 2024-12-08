@@ -104,7 +104,7 @@ export default () =>
         ) {
           // hyprctl notify [ICON] [TIME_MS] [COLOR] [MESSAGE]
           lib_hyprland.message(
-            `notify 0 10000 0 fontsize:25  Your battery is dying! ${battery_percent}% battery charge remaining!`,
+            `notify 3 10000 0 fontsize:25  Your battery is dying! ${battery_percent}% battery charge remaining!`,
           );
 
           notify_extreme_low_battery = false;

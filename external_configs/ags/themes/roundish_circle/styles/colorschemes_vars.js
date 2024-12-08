@@ -216,7 +216,7 @@ const colorschemes_vars = {
     workspace_item_active_container_bg: "#26233a",
     workspace_item_active_label_fg: "#d7827e",
     workspace_border: "#d7827e",
-    systray_bg: "#6e6a86",
+    systray_bg: "#403d52",
     battery_container_bg: "#26233a",
     battery_container_charging_bg: "#26233a",
     battery_label_fg: "#c4a7e7",
