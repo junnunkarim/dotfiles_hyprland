@@ -16,7 +16,17 @@ def change_wallpaper(wallpaper: str, directory: str = "~/.config/wallpaper/"):
     print(directory)
     wall_directory = Path(directory + wallpaper).expanduser()
 
-    cmd = ["swww", "img", "--transition-type", "any", f"{wall_directory}"]
+    cmd = [
+        "swww",
+        "img",
+        "--transition-type",
+        "any",
+        "--transition-fps",
+        "60",
+        "--transition-duration",
+        "2",
+        f"{wall_directory}",
+    ]
     subprocess.run(cmd, encoding="utf-8")
 
 

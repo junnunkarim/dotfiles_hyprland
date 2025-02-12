@@ -9,8 +9,8 @@ const workspace_labels = {
   5: "",
   6: "",
   7: "󰍡",
-  8: "󰊖",
-  9: "",
+  8: "",
+  9: "󰌴",
 };
 
 const create_ws_icon = (workspace_id) =>
@@ -52,8 +52,8 @@ const ws_item = (workspace_id) =>
       self.hook(lib_hyprland, () => {
         // lib_hyprland.messageAsync(`notify 1 5000 0 "Current Workspace"`);
         // get the client count in current workspace
-        const client_count =
-          lib_hyprland.getWorkspace(workspace_id)?.windows || 0;
+        const client_count = lib_hyprland.getWorkspace(workspace_id)?.windows ||
+          0;
         // check if the current workspace is active or not
         const is_active = lib_hyprland.active.workspace.id === workspace_id;
         // check if the current workspace has clients/windows or not
@@ -101,8 +101,8 @@ const ws_item_revealer = (workspace_id) =>
       // hook into hyprland's state and update the button's state based on the workspace status
       self.hook(lib_hyprland, () => {
         // get the client count in current workspace
-        const client_count =
-          lib_hyprland.getWorkspace(workspace_id)?.windows || 0;
+        const client_count = lib_hyprland.getWorkspace(workspace_id)?.windows ||
+          0;
         // check if the current workspace is active or not
         const is_active = lib_hyprland.active.workspace.id === workspace_id;
         // check if the current workspace has clients/windows or not
@@ -121,6 +121,6 @@ export default () =>
 
     // create buttons for workspaces 1 to 9
     children: [...Array(workspace_count).keys()].map((i) =>
-      ws_item_revealer(i + 1),
+      ws_item_revealer(i + 1)
     ),
   });
