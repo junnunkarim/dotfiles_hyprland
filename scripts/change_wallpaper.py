@@ -12,8 +12,8 @@ def change_wallpaper(wallpaper: str, directory: str = "~/.config/wallpaper/"):
     if directory[-1] != "/":
         directory = directory + "/"
 
-    print(wallpaper)
-    print(directory)
+    # print(wallpaper)
+    # print(directory)
     wall_directory = Path(directory + wallpaper).expanduser()
 
     cmd = [

@@ -1,35 +1,35 @@
 {
-  "label_fg": "#d1c5b4",
+  "label_fg": "#cac4cf",
 
-  "bar_bg": "#241f17",
+  "bar_bg": "#201047",
 
-  "clock_container_bg": "#54452a",
-  "clock_icon_bg": "#f7dfbb",
-  "clock_icon_fg": "#54452a",
-  "clock_label_fg": "#f7dfbb",
-  "clock_border": "#f7dfbb",
+  "clock_container_bg": "#494458",
+  "clock_icon_bg": "#e8def8",
+  "clock_icon_fg": "#494458",
+  "clock_label_fg": "#e8def8",
+  "clock_border": "#e8def8",
 
-  "window_title_border": "#ece1d4",
+  "window_title_border": "#e6e1e9",
 
-  "workspace_item_active_icon_bg": "#edc06c",
-  "workspace_item_active_icon_fg": "#412d00",
-  "workspace_item_active_container_bg": "#412d00",
-  "workspace_item_active_label_fg": "#edc06c",
-  "workspace_border": "#edc06c",
+  "workspace_item_active_icon_bg": "#cebdfe",
+  "workspace_item_active_icon_fg": "#35275d",
+  "workspace_item_active_container_bg": "#35275d",
+  "workspace_item_active_label_fg": "#cebdfe",
+  "workspace_border": "#cebdfe",
 
-  "systray_bg": "#364d2e",
+  "systray_bg": "#633b49",
 
-  "battery_container_bg": "#203619",
-  "battery_container_charging_bg": "#55200d",
-  "battery_label_fg": "#b3cea6",
-  "battery_label_charging_fg": "#ffb59d",
-  "battery_icon_fg": "#203619",
-  "battery_icon_bg": "#b3cea6",
-  "battery_icon_charging_bg": "#ffb59d",
-  "battery_border": "#b3cea6",
-  "battery_border_charging": "#ffb59d",
+  "battery_container_bg": "#492532",
+  "battery_container_charging_bg": "#551d2c",
+  "battery_label_fg": "#efb8c9",
+  "battery_label_charging_fg": "#ffb1c0",
+  "battery_icon_fg": "#492532",
+  "battery_icon_bg": "#efb8c9",
+  "battery_icon_charging_bg": "#ffb1c0",
+  "battery_border": "#efb8c9",
+  "battery_border_charging": "#ffb1c0",
 
   "bar_opacity": "0.6",
 
-  "hyprland_border": "edc06c"
+  "hyprland_border": "cebdfe"
 }
