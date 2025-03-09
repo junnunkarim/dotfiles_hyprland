@@ -92,7 +92,8 @@ export const generate_colors = (user_options) => {
 
   // get the json object of the selected colorscheme
   const colors_vars = get_colors_vars(user_options.colorscheme);
-  const scss_colors_location = `${App.configDir}/themes/${user_options.theme}/styles/_colors.scss`;
+  const scss_colors_location =
+    `${App.configDir}/themes/${user_options.theme}/styles/_colors.scss`;
 
   // switch border color of hyprland
   execute_cmd(
@@ -113,7 +114,8 @@ export const generate_colors = (user_options) => {
 // different values
 export const generate_vars = (user_options) => {
   const colors_vars = get_colors_vars(user_options.colorscheme);
-  const scss_vars_location = `${App.configDir}/themes/${user_options.theme}/styles/_vars.scss`;
+  const scss_vars_location =
+    `${App.configDir}/themes/${user_options.theme}/styles/_vars.scss`;
 
   // write the scss variables to the `_vars.scss`
   Utils.writeFile(vars_to_write(colors_vars).join("\n"), scss_vars_location);
