@@ -3,6 +3,7 @@
   border-radius: $border_radius;
 
   /* margin-bottom: 0.25rem; */
+  border-radius: $bottom_edge_border_radius;
 
   &:not(.battery_container_charging__box) {
     background: $battery_container_bg;
@@ -29,7 +30,7 @@
   font-size: $icon_size * 1.2;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  border-radius: $border_radius;
+  border-radius: $bottom_edge_border_radius;
 
   &:not(.battery_icon_charging__icn) {
     color: $battery_icon_fg;

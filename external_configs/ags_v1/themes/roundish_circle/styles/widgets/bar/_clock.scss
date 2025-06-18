@@ -7,6 +7,7 @@
 
   /* margin-top: 0.25rem; */
   margin-bottom: 0.5rem;
+  border-radius: $top_edge_border_radius;
 
   /* &:hover { */
   /*   border-color: $clock_border; */
@@ -17,7 +18,7 @@
   color: $clock_icon_fg;
 
   font-size: $icon_glyph_size;
-  border-radius: $border_radius;
+  border-radius: $top_edge_border_radius;
 }
 .clock_string__lbl {
   @include unset;

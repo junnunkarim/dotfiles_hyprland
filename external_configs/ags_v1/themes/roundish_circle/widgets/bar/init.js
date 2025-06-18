@@ -57,7 +57,7 @@ export const setup_bar = (monitor = 0) =>
     monitor,
     anchor: ["left", "top", "bottom"],
     // [top, right, bottom, left]
-    margins: [10, 0, 10, 0],
+    margins: [10, 0, 10, 10],
     exclusivity: "exclusive",
     // widthRequest: 40,
     child: Widget.CenterBox({

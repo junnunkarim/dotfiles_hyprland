@@ -231,6 +231,35 @@ const colorschemes_vars = {
 
     hyprland_border: "d7827e",
   },
+  tokyonight_storm: {
+    label_fg: "#c0caf5",
+    bar_bg: "#24283b",
+    clock_container_bg: "#292e42",
+    clock_icon_bg: "#bb9af7",
+    clock_icon_fg: "#292e42",
+    clock_label_fg: "#bb9af7",
+    clock_border: "#bb9af7",
+    window_title_border: "#e0def4",
+    workspace_item_active_icon_bg: "#7aa2f7",
+    workspace_item_active_icon_fg: "#26233a",
+    workspace_item_active_container_bg: "#26233a",
+    workspace_item_active_label_fg: "#7aa2f7",
+    workspace_border: "#7aa2f7",
+    systray_bg: "#403d52",
+    battery_container_bg: "#26233a",
+    battery_container_charging_bg: "#26233a",
+    battery_label_fg: "#41a6b5",
+    battery_label_charging_fg: "#f7768e",
+    battery_icon_fg: "#26233a",
+    battery_icon_bg: "#41a6b5",
+    battery_icon_charging_bg: "#f7768e",
+    battery_border: "#41a6b5",
+    battery_border_charging: "#f7768e",
+
+    bar_opacity: "0.8",
+
+    hyprland_border: "7aa2f7",
+  },
 };
 
 export const get_colors_vars = (selected_colorscheme = "gruvbox") => {

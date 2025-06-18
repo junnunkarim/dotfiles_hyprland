@@ -65,6 +65,11 @@ const vars_to_write = (colors_vars) => {
   const font_size = "95%";
   // top-left top-right bottom-right bottem-left
   const border_radius = "0rem 1rem 1rem 0rem";
+  const bar_border_radius = "1rem 1rem 1rem 1rem";
+  const top_edge_border_radius = "0.7rem 1rem 1rem 0rem";
+  const bottom_edge_border_radius = "0rem 1rem 1rem 0.7rem";
+  const square_radius = "0rem 0rem 0rem 0rem";
+
   const bar_opacity = colors_vars.bar_opacity;
   const transition_animation = "all 0.5s ease-in-out";
   // const transition_animation = "all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55)";
@@ -78,6 +83,9 @@ const vars_to_write = (colors_vars) => {
     scss_format("icon_glyph_size", "$icon_size * 1.6"),
     "", // separator
     scss_format("border_radius", border_radius),
+    scss_format("bar_border_radius", bar_border_radius),
+    scss_format("top_edge_border_radius", top_edge_border_radius),
+    scss_format("bottom_edge_border_radius", bottom_edge_border_radius),
     "", // separator
     scss_format("bar_opacity", bar_opacity),
     "", // separator
